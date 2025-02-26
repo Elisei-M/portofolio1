@@ -7,29 +7,25 @@ document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
-  // Elementele Secțiunii de Introducere
+  // Elementele secțiunilor Introducere, About Me & Skills care au text de tradus
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
-
-  // Elementele secțiunilor About Me & Skills care au text ce trebuie comutat
   const langTextElements = document.querySelectorAll(".lang-text");
 
   // Variabila pentru limba curentă: 'EN' sau 'RO'
   let currentLanguage = "EN";
 
-  // Funcție pentru schimbarea iconiței dark/light cu tranziție lină
+  // Funcție pentru schimbarea iconiței dark/light
   function updateModeIcon(isDark) {
     modeIcon.style.opacity = 0;
     setTimeout(() => {
       if (isDark) {
-        // Icon lună pentru modul dark
         modeIcon.innerHTML = `
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path>
           </svg>
         `;
       } else {
-        // Icon soare pentru modul light
         modeIcon.innerHTML = `
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <circle cx="12" cy="12" r="5"></circle>
@@ -48,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 200);
   }
 
-  // Comutare Dark/Light Mode
+  // Eveniment pentru schimbarea temei
   modeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     const isDark = document.body.classList.contains("dark-mode");
@@ -57,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Funcție pentru actualizarea limbii în Navbar, Introducere, About Me și Skills
   function updateLanguage() {
-    // Actualizează textul linkurilor din Navbar
     navLinks.forEach(link => {
       switch(link.getAttribute("href")) {
         case "#home":
@@ -77,17 +72,15 @@ document.addEventListener("DOMContentLoaded", function() {
           break;
       }
     });
-    // Actualizează textul secțiunii de Introducere
     if (introDesc) {
       introDesc.textContent = introDesc.getAttribute(currentLanguage === "EN" ? "data-en" : "data-ro");
     }
-    // Actualizează textul din secțiunile About Me & Skills
     langTextElements.forEach(elem => {
       elem.textContent = elem.getAttribute(currentLanguage === "EN" ? "data-en" : "data-ro");
     });
   }
 
-  // Comutare limbă la clic
+  // Eveniment pentru schimbarea limbii
   langToggle.addEventListener("click", () => {
     currentLanguage = currentLanguage === "EN" ? "RO" : "EN";
     langToggle.textContent = currentLanguage;
@@ -104,16 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
   cycleDynamicText();
   setInterval(cycleDynamicText, 2000);
 
-  // Animația barelor de progres în secțiunea Skills
-  const progressBars = document.querySelectorAll('.progress');
-  progressBars.forEach(progress => {
-    const targetWidth = progress.getAttribute('data-progress');
-    setTimeout(() => {
-      progress.style.width = targetWidth;
-    }, 500);
-  });
-
-  // Toggle pentru hamburger menu pe mobil
+  // Hamburger menu pentru mobil
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
