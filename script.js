@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
 
-  // Elementele secțiunii About Me & Skills ce au text ce trebuie comutat
+  // Elementele secțiunilor About Me & Skills care au text ce trebuie comutat
   const langTextElements = document.querySelectorAll(".lang-text");
 
   // Variabila pentru limba curentă: 'EN' sau 'RO'
@@ -104,20 +104,20 @@ document.addEventListener("DOMContentLoaded", function() {
   cycleDynamicText();
   setInterval(cycleDynamicText, 2000);
 
-  // Animate progress bars in Skills section
+  // Animația barelor de progres în secțiunea Skills
   const progressBars = document.querySelectorAll('.progress');
   progressBars.forEach(progress => {
-      const targetWidth = progress.getAttribute('data-progress');
-      setTimeout(() => {
-         progress.style.width = targetWidth;
-      }, 500);
+    const targetWidth = progress.getAttribute('data-progress');
+    setTimeout(() => {
+      progress.style.width = targetWidth;
+    }, 500);
   });
 
-  // Toggle pentru hamburger menu pe dispozitive mobile
+  // Toggle pentru hamburger menu pe mobil
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
 
-  // Inițializare limbă (la pornirea paginii)
+  // Inițializare limbă
   updateLanguage();
 });
