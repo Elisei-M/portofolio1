@@ -2,6 +2,8 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
+  /* Pentru a evidenția navbar-ul (test) poți seta un fundal contrastant */
+  background-color: #333; 
 }
 
 /* Navbar fix cu fundal transparent (se poate schimba la scroll) */
