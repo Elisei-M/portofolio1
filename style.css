@@ -138,29 +138,6 @@ body {
   cursor: pointer;
 }
 
-@media screen and (max-width: 960px) {
-  .menu-icon {
-    display: block;
-  }
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: var(--navbar-bg-scrolled);
-    position: absolute;
-    top: 80px;
-    left: 0;
-  }
-  .nav-item {
-    margin: 0;
-    text-align: center;
-  }
-  .nav-links {
-    padding: 15px;
-    width: 100%;
-    display: block;
-  }
-
 /* Secțiunea de Introducere */
 .main-content {
   padding: 120px 40px 20px;
@@ -168,7 +145,6 @@ body {
   margin: 0 auto;
   text-align: left;
 }
-
 .content {
   position: relative;
   font-family: 'Lato', sans-serif;
@@ -182,7 +158,6 @@ body {
   display: inline;
   white-space: nowrap;
 }
-
 .animated-wrapper::before,
 .animated-wrapper::after {
   content: "";
@@ -190,29 +165,24 @@ body {
   color: #16a085;
   animation: opacity 2s infinite;
 }
-
 @keyframes opacity {
   0%, 100% { opacity: 0; }
   50% { opacity: 1; }
 }
-
 .dynamic-text-wrapper {
   display: inline-block;
   overflow: hidden;
   height: 40px;
   line-height: 40px;
 }
-
 .dynamic-list {
   animation: change 10s infinite;
 }
-
 .dynamic-list__item {
   display: block;
   height: 40px;
   line-height: 40px;
 }
-
 @keyframes change {
   0%, 12.66%, 100% { transform: translateY(0); }
   16.66%, 29.32% { transform: translateY(-40px); }
@@ -229,23 +199,19 @@ body {
   margin-top: 20px;
   color: inherit;
 }
-
 .signature-name {
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
 }
-
 .signature-name:hover {
   animation: jump 0.5s ease, pulse 1.5s infinite;
 }
-
 @keyframes jump {
   0% { transform: translateY(0); }
   30% { transform: translateY(-10px); }
   50% { transform: translateY(0); }
   100% { transform: translateY(0); }
 }
-
 @keyframes pulse {
   0% { color: inherit; }
   50% { color: #16a085; }
@@ -278,5 +244,27 @@ body {
   box-shadow: 0 5px 15px rgba(22, 160, 133, 0.4);
 }
 
-
+/* Responsive pentru ecrane mici */
+@media screen and (max-width: 960px) {
+  .menu-icon {
+    display: block;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--navbar-bg-scrolled);
+    position: absolute;
+    top: 80px;
+    left: 0;
+  }
+  .nav-item {
+    margin: 0;
+    text-align: center;
+  }
+  .nav-links {
+    padding: 15px;
+    width: 100%;
+    display: block;
+  }
 }
