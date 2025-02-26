@@ -1,17 +1,17 @@
-/* styles.css */
+/* Reset și stiluri de bază */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Navbar */
 .navbar {
   background-color: var(--primary-bg);
   padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: fixed;
   width: 100%;
   top: 0;
@@ -20,6 +20,20 @@ body {
   transition: background-color 0.3s;
 }
 
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-text);
+  text-decoration: none;
+}
+
+/* Meniu */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -41,42 +55,43 @@ body {
   color: var(--accent-color);
 }
 
-/* Butoanele de toggle */
+/* Butoane (stil futurist) */
 .nav-buttons {
   display: flex;
   align-items: center;
 }
 
 .toggle-btn {
-  background: none;
-  border: 1px solid var(--primary-text);
-  color: var(--primary-text);
-  padding: 5px 10px;
+  background: linear-gradient(45deg, #1E90FF, #FF4500);
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
   margin-left: 10px;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .toggle-btn:hover {
-  background-color: var(--accent-color);
-  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
 }
 
-/* Variabilele CSS pentru temele light și dark */
-:root {
-  --primary-bg: #fff;
-  --primary-text: #333;
-  --accent-color: #007BFF;
+/* Stil special pentru butonul de dark/light */
+.mode-btn {
+  padding: 8px;
+  border-radius: 50%;
 }
 
-body.dark-mode {
-  --primary-bg: #333;
-  --primary-text: #fff;
-  --accent-color: #1E90FF;
+.mode-icon {
+  display: inline-block;
+  transition: opacity 0.4s ease;
 }
 
-/* Hamburger menu pentru mobil */
+/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -113,4 +128,17 @@ body.dark-mode {
   .hamburger {
     display: flex;
   }
+}
+
+/* Variabile CSS pentru temele light și dark */
+:root {
+  --primary-bg: #fff;
+  --primary-text: #333;
+  --accent-color: #007BFF;
+}
+
+body.dark-mode {
+  --primary-bg: #333;
+  --primary-text: #fff;
+  --accent-color: #1E90FF;
 }
