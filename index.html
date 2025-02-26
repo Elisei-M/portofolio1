@@ -19,12 +19,11 @@
         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-buttons">
-        <!-- Butonul de limbă: afișează limba curentă -->
+        <!-- Butonul de limbă -->
         <button id="lang-toggle" class="toggle-btn">EN</button>
-        <!-- Butonul de dark/light cu iconiță -->
+        <!-- Buton dark/light -->
         <button id="mode-toggle" class="toggle-btn mode-btn">
           <span class="mode-icon" id="mode-icon">
-            <!-- Icon default: soare pentru modul light -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -39,7 +38,6 @@
           </span>
         </button>
       </div>
-      <!-- Hamburger menu pentru mobil -->
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -82,7 +80,6 @@
            data-ro="De asemenea, am o pasiune pentru învățarea continuă și pentru împărtășirea cunoștințelor cu alți entuziaști ai tehnologiei.">
           I also have a passion for continuous learning and for sharing knowledge with other technology enthusiasts.
         </p>
-        <!-- Butonul Resume -->
         <a class="cta-btn resume-btn" href="cv.pdf" download>Resume</a>
       </div>
       <div class="about-image">
@@ -91,48 +88,56 @@
     </div>
   </section>
 
-  <!-- Secțiunea Skills -->
+  <!-- Secțiunea Skills - exact ca în CodePen -->
   <section id="skills">
     <div class="skills-container">
       <h2 class="lang-text" data-en="Skills" data-ro="Abilități">Skills</h2>
       
       <div class="skill">
+        <div class="skill-logo">
+          <img src="images/html-logo.png" alt="HTML">
+        </div>
         <div class="skill-info">
-          <img src="images/html-logo.png" alt="HTML Logo">
           <span class="skill-name">HTML</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" data-progress="90%"></div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 90%;"></div>
+          </div>
         </div>
       </div>
       
       <div class="skill">
+        <div class="skill-logo">
+          <img src="images/css-logo.png" alt="CSS">
+        </div>
         <div class="skill-info">
-          <img src="images/css-logo.png" alt="CSS Logo">
           <span class="skill-name">CSS</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" data-progress="80%"></div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 80%;"></div>
+          </div>
         </div>
       </div>
       
       <div class="skill">
+        <div class="skill-logo">
+          <img src="images/js-logo.png" alt="JavaScript">
+        </div>
         <div class="skill-info">
-          <img src="images/js-logo.png" alt="JavaScript Logo">
           <span class="skill-name">JavaScript</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" data-progress="75%"></div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 75%;"></div>
+          </div>
         </div>
       </div>
       
       <div class="skill">
-        <div class="skill-info">
-          <img src="images/java-logo.png" alt="Java Logo">
-          <span class="skill-name">Java</span>
+        <div class="skill-logo">
+          <img src="images/java-logo.png" alt="Java">
         </div>
-        <div class="progress-bar">
-          <div class="progress" data-progress="60%"></div>
+        <div class="skill-info">
+          <span class="skill-name">Java</span>
+          <div class="progress">
+            <div class="progress-bar" style="width: 60%;"></div>
+          </div>
         </div>
       </div>
     </div>
