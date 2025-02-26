@@ -8,6 +8,19 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Variabile CSS */
+:root {
+  --primary-bg: #fff;
+  --primary-text: #333;
+  --accent-color: #007BFF;
+}
+
+body.dark-mode {
+  --primary-bg: #333;
+  --primary-text: #fff;
+  --accent-color: #1E90FF;
+}
+
 /* Navbar */
 .navbar {
   background-color: var(--primary-bg);
@@ -36,7 +49,6 @@ body {
   text-decoration: none;
 }
 
-/* Meniu */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -58,7 +70,6 @@ body {
   color: var(--accent-color);
 }
 
-/* Butoane (stil futuristic) */
 .nav-buttons {
   display: flex;
   align-items: center;
@@ -80,10 +91,9 @@ body {
 
 .toggle-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
+  box-shadow: 0 0 10px rgba(30,144,255,0.7);
 }
 
-/* Stil special pentru butonul de dark/light */
 .mode-btn {
   padding: 8px;
   border-radius: 50%;
@@ -94,7 +104,6 @@ body {
   transition: opacity 0.4s ease;
 }
 
-/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -168,7 +177,7 @@ body {
 
 .cta-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
+  box-shadow: 0 0 15px rgba(30,144,255,0.7);
 }
 
 /* Secțiunea About Me */
@@ -203,12 +212,10 @@ body {
   margin-bottom: 15px;
 }
 
-/* Butonul Resume */
 .resume-btn {
   margin-top: 20px;
 }
 
-/* Redimensionarea imaginii About Me */
 .about-image {
   flex: 1;
   text-align: right;
@@ -239,41 +246,35 @@ body {
   text-align: left;
 }
 
-/* Fiecare skill */
 .skill {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-/* Container pentru logo și numele skill-ului */
-.skill-info {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
+.skill-logo img {
+  width: 40px;
+  margin-right: 10px;
 }
 
-.skill-info img {
-  width: 40px;
-  height: auto;
-  margin-right: 10px;
+.skill-info {
+  flex: 1;
 }
 
 .skill-name {
   font-size: 1.2rem;
+  margin-bottom: 5px;
 }
 
-/* Bara de progres */
-.progress-bar {
-  width: 100%;
-  background-color: #ddd;
+.progress {
+  background: #ddd;
   border-radius: 20px;
   overflow: hidden;
 }
 
-.progress {
-  width: 0;
+.progress-bar {
   height: 10px;
   background: linear-gradient(45deg, #1E90FF, #FF4500);
-  transition: width 1s ease-in-out;
 }
 
 /* Responsivitate */
@@ -309,17 +310,4 @@ body {
   .skills-container h2 {
     text-align: center;
   }
-}
-
-/* Variabile CSS pentru temele light și dark */
-:root {
-  --primary-bg: #fff;
-  --primary-text: #333;
-  --accent-color: #007BFF;
-}
-
-body.dark-mode {
-  --primary-bg: #333;
-  --primary-text: #fff;
-  --accent-color: #1E90FF;
 }
