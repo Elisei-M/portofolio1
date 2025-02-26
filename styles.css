@@ -203,7 +203,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* Stil pentru butonul Resume */
+/* Butonul Resume */
 .resume-btn {
   margin-top: 20px;
 }
@@ -239,15 +239,29 @@ body {
   text-align: left;
 }
 
+/* Fiecare skill */
 .skill {
   margin-bottom: 20px;
 }
 
-.skill-name {
-  font-size: 1.2rem;
+/* Container pentru logo și numele skill-ului */
+.skill-info {
+  display: flex;
+  align-items: center;
   margin-bottom: 8px;
 }
 
+.skill-info img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+}
+
+/* Bara de progres */
 .progress-bar {
   width: 100%;
   background-color: #ddd;
@@ -256,7 +270,7 @@ body {
 }
 
 .progress {
-  width: 0; /* Pornim de la 0 pentru animație */
+  width: 0;
   height: 10px;
   background: linear-gradient(45deg, #1E90FF, #FF4500);
   transition: width 1s ease-in-out;
