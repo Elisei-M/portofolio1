@@ -112,7 +112,7 @@ body {
 /* Secțiunea de Introducere */
 #introduction {
   padding: 120px 20px 80px;
-  text-align: left;  /* Aliniere de la stânga */
+  text-align: left;
   background: var(--primary-bg);
   color: var(--primary-text);
 }
@@ -169,6 +169,48 @@ body {
   box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
 }
 
+/* Secțiunea About Me */
+#about {
+  padding: 80px 20px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-image {
+  flex: 1;
+  text-align: right;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
 /* Responsivitate */
 @media screen and (max-width: 768px) {
   .nav-menu {
@@ -190,6 +232,13 @@ body {
   }
   .hamburger {
     display: flex;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image {
+    text-align: center;
   }
 }
 
