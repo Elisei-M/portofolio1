@@ -221,6 +221,47 @@ body {
   border-radius: 10px;
 }
 
+/* Secțiunea Skills */
+#skills {
+  padding: 80px 20px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-container h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0; /* Pornim de la 0 pentru animație */
+  height: 10px;
+  background: linear-gradient(45deg, #1E90FF, #FF4500);
+  transition: width 1s ease-in-out;
+}
+
 /* Responsivitate */
 @media screen and (max-width: 768px) {
   .nav-menu {
@@ -250,6 +291,9 @@ body {
   .about-image {
     text-align: center;
     margin-top: 20px;
+  }
+  .skills-container h2 {
+    text-align: center;
   }
 }
 
