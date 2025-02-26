@@ -11,7 +11,7 @@ body {
 /* Navbar */
 .navbar {
   background-color: var(--primary-bg);
-  padding: 10px 0; /* ajustare pentru spațiu vertical */
+  padding: 10px 0;
   position: fixed;
   width: 100%;
   top: 0;
@@ -21,9 +21,9 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px; /* limitează lățimea maximă */
-  margin: 0 auto;    /* centrează containerul */
-  padding: 0 20px;   /* asigură un padding pe laterale */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -107,6 +107,66 @@ body {
   background-color: var(--primary-text);
   margin: 4px 0;
   transition: 0.4s;
+}
+
+/* Secțiunea de Introducere */
+#introduction {
+  padding: 120px 20px 80px;
+  text-align: left;  /* Aliniere de la stânga */
+  background: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.intro-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#introduction h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.greeting {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.dynamic-text {
+  font-weight: bold;
+  color: var(--accent-color);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.name {
+  font-weight: normal;
+}
+
+.intro-desc {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background: linear-gradient(45deg, #FF4500, #1E90FF);
+  border: none;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
 }
 
 /* Responsivitate */
