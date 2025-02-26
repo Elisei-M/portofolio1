@@ -18,9 +18,27 @@
         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-buttons">
-        <button id="lang-toggle" class="toggle-btn">EN/RO</button>
-        <button id="mode-toggle" class="toggle-btn">Dark/Light</button>
+        <!-- Butonul de limbă: afișează limba curentă -->
+        <button id="lang-toggle" class="toggle-btn">EN</button>
+        <!-- Butonul de dark/light cu iconiță -->
+        <button id="mode-toggle" class="toggle-btn mode-btn">
+          <span class="mode-icon" id="mode-icon">
+            <!-- Icon default: soare pentru modul light -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+        </button>
       </div>
+      <!-- Hamburger menu pentru dispozitive mobile -->
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -28,6 +46,8 @@
       </div>
     </div>
   </nav>
+
+  <!-- Restul conținutului portofoliului poate fi adăugat aici -->
 
   <script src="script.js"></script>
 </body>
