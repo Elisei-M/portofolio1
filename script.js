@@ -1,36 +1,35 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", function() {
   // Dark/Light mode toggle
   const themeToggle = document.getElementById('theme-toggle');
-  themeToggle.addEventListener('click', () => {
+  themeToggle.addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
     const icon = themeToggle.querySelector('i');
-    if (document.body.classList.contains('dark-mode')) {
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
+    if(document.body.classList.contains('dark-mode')){
+      icon.classList.replace('fa-moon', 'fa-sun');
     } else {
-      icon.classList.remove('fa-sun');
-      icon.classList.add('fa-moon');
+      icon.classList.replace('fa-sun', 'fa-moon');
     }
   });
 
-  // Placeholder pentru schimbarea limbii
+  // Language toggle placeholder
   const langToggle = document.getElementById('lang-toggle');
-  langToggle.addEventListener('click', () => {
-    alert("Butonul de schimbare a limbii a fost apăsat!");
+  langToggle.addEventListener('click', function() {
+    alert("Language toggle clicked!");
   });
 
-  // Funcție pentru meniul mobil
+  // Mobile menu toggle
   window.toggleMobileMenu = function() {
     const navMenu = document.querySelector('.nav-menu');
-    if (navMenu.style.display === 'flex') {
-      navMenu.style.display = 'none';
+    if (navMenu.style.display === "flex") {
+      navMenu.style.display = "none";
     } else {
-      navMenu.style.display = 'flex';
+      navMenu.style.display = "flex";
+      navMenu.style.flexDirection = "column";
     }
   };
 
-  // Schimbarea stilului navbar-ului la scroll
-  window.addEventListener('scroll', () => {
+  // Navbar scroll effect
+  window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
