@@ -16,7 +16,6 @@ themeToggle.addEventListener('click', () => {
 // Placeholder pentru schimbarea limbii
 const langToggle = document.getElementById('lang-toggle');
 langToggle.addEventListener('click', () => {
-  // Aici se poate adăuga logica pentru comutarea limbii
   alert("Butonul de schimbare a limbii a fost apăsat!");
 });
 
