@@ -11,9 +11,9 @@ body {
 
 /* Variabile pentru modul dark (implicit) */
 :root {
-  --bg-color: #111;             /* Fundal dark */
-  --text-color: #fff;           /* Text alb */
-  --navbar-bg: transparent;     /* Navbar inițial transparent */
+  --bg-color: #111;
+  --text-color: #fff;
+  --navbar-bg: transparent;
   --navbar-bg-scrolled: rgba(0, 0, 0, 0.9);
   --navbar-text: #fff;
   --btn-border: #fff;
@@ -36,106 +36,6 @@ body {
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-}
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px 50px;
-  z-index: 100;
-  background: var(--navbar-bg);
-  transition: background 0.3s ease, padding 0.3s ease;
-}
-.navbar.scrolled {
-  background: var(--navbar-bg-scrolled);
-  padding: 10px 50px;
-}
-.navbar-container {
-  max-width: 1300px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.navbar-logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--navbar-text);
-  text-decoration: none;
-}
-
-/* Meniu */
-.nav-menu {
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-.nav-item {
-  margin-left: 20px;
-}
-.nav-links {
-  text-decoration: none;
-  color: var(--navbar-text);
-  font-size: 1rem;
-  transition: color 0.3s ease;
-  padding: 5px 10px;
-}
-.nav-links:hover {
-  color: #f09;
-}
-
-/* Butoane pentru limbă și toggle dark/light mode */
-.nav-btns {
-  display: flex;
-  align-items: center;
-}
-.btn-lang {
-  background: none;
-  border: 2px solid var(--btn-border);
-  color: var(--navbar-text);
-  padding: 5px 15px;
-  margin-left: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-}
-.btn-lang:hover {
-  background: var(--btn-hover-bg);
-  color: var(--btn-hover-text);
-}
-
-/* Toggle switch pentru dark/light mode */
-.btn-theme {
-  position: relative;
-  width: 50px;
-  height: 25px;
-  border: none;
-  background: var(--btn-border);
-  border-radius: 25px;
-  margin-left: 20px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: background 0.3s ease;
-}
-.btn-theme .toggle-ball {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 21px;
-  height: 21px;
-  background: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-/* Meniu mobil */
-.menu-icon {
-  display: none;
-  color: var(--navbar-text);
-  font-size: 1.8rem;
-  cursor: pointer;
 }
 
 /* Secțiunea de Introducere */
@@ -192,7 +92,7 @@ body {
   83.3%, 95.96% { transform: translateY(-40px); }
 }
 
-/* Semnătura */
+/* Semnătura și Despre mine se păstrează la fel */
 .signature {
   font-family: 'Lato', sans-serif;
   font-size: 30px;
@@ -217,8 +117,6 @@ body {
   50% { color: #16a085; }
   100% { color: inherit; }
 }
-
-/* Despre mine */
 .about-me {
   margin-top: 30px;
 }
