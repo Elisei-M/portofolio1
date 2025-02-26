@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Navbar (se menține conform implementării anterioare) -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#" class="logo">Nume</a>
@@ -47,7 +48,21 @@
     </div>
   </nav>
 
-  <!-- Restul conținutului portofoliului poate fi adăugat aici -->
+  <!-- Secțiunea de Introducere -->
+  <section id="introduction">
+    <div class="intro-container">
+      <h1>
+        <span class="greeting">[hello <span class="dynamic-text"></span>]</span> I'm <span class="name">Manole Elisei</span>
+      </h1>
+      <p class="intro-desc" 
+         data-en="I am a full stack developer passionate about technology, with expertise in both front-end and back-end. I enjoy challenges that drive me to innovate and continuously evolve." 
+         data-ro="Sunt un dezvoltator full stack pasionat de tehnologie, cu expertiza atât în front-end cât și în back-end. Îmi plac provocările care mă determină să inovez și să evoluez continuu.">
+      </p>
+      <button class="cta-btn" id="talk-btn">Let's talk</button>
+    </div>
+  </section>
+
+  <!-- Alte secțiuni vor urma aici -->
 
   <script src="script.js"></script>
 </body>
