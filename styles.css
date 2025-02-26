@@ -11,7 +11,7 @@ body {
 /* Navbar */
 .navbar {
   background-color: var(--primary-bg);
-  padding: 10px 20px;
+  padding: 10px 0; /* ajustare pentru spațiu vertical */
   position: fixed;
   width: 100%;
   top: 0;
@@ -21,6 +21,9 @@ body {
 }
 
 .nav-container {
+  max-width: 1200px; /* limitează lățimea maximă */
+  margin: 0 auto;    /* centrează containerul */
+  padding: 0 20px;   /* asigură un padding pe laterale */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +58,7 @@ body {
   color: var(--accent-color);
 }
 
-/* Butoane (stil futurist) */
+/* Butoane (stil futuristic) */
 .nav-buttons {
   display: flex;
   align-items: center;
