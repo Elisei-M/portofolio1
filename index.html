@@ -1,23 +1,34 @@
----
-title: Home
----
 <!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }}</title>
-  <!-- Fișierul CSS principal -->
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome pentru iconițe -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-s+9z5Z0r1l6rXa3V5eU14BSZ6v7ezMBsE07y1i2IDv+wFVOUqK8bFlJxjOzr2l2jQw+1f16TyzpsZpnFkNZgYw==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofoliu</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  {% include navbar.html %}
-  {% include introduction.html %}
-  
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">Nume</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <button id="lang-toggle" class="toggle-btn">EN/RO</button>
+        <button id="mode-toggle" class="toggle-btn">Dark/Light</button>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
   <script src="script.js"></script>
 </body>
 </html>
