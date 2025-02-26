@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
-  // Elementele secțiunilor Introducere, About Me & Skills care au text de tradus
+  // Elementele secțiunilor ce trebuie traduse (Introducere, About Me, Skills)
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
   const langTextElements = document.querySelectorAll(".lang-text");
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     updateModeIcon(isDark);
   });
 
-  // Funcție pentru actualizarea limbii în Navbar, Introducere, About Me și Skills
+  // Funcție pentru actualizarea limbii
   function updateLanguage() {
     navLinks.forEach(link => {
       switch(link.getAttribute("href")) {
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Eveniment pentru schimbarea limbii
+  // Eveniment pentru comutarea limbii
   langToggle.addEventListener("click", () => {
     currentLanguage = currentLanguage === "EN" ? "RO" : "EN";
     langToggle.textContent = currentLanguage;
@@ -97,11 +97,11 @@ document.addEventListener("DOMContentLoaded", function() {
   cycleDynamicText();
   setInterval(cycleDynamicText, 2000);
 
-  // Hamburger menu pentru mobil
+  // Eveniment pentru hamburger menu
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
 
-  // Inițializare limbă
+  // Inițializare limbă la pornire
   updateLanguage();
 });
