@@ -1,168 +1,116 @@
-/* Resetare */
-* {
+/* styles.css */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  transition: background 0.3s, color 0.3s;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Variabile pentru modul dark (implicit) */
-:root {
-  --bg-color: #111;
-  --text-color: #fff;
-  --navbar-bg: transparent;
-  --navbar-bg-scrolled: rgba(0, 0, 0, 0.9);
-  --navbar-text: #fff;
-  --btn-border: #fff;
-  --btn-hover-bg: #fff;
-  --btn-hover-text: #111;
+.navbar {
+  background-color: var(--primary-bg);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
 }
 
-/* Variabile pentru modul light (prin clasa .light-mode) */
-.light-mode {
-  --bg-color: #fff;
-  --text-color: #333;
-  --navbar-bg: transparent;
-  --navbar-bg-scrolled: rgba(255, 255, 255, 1);
-  --navbar-text: #333;
-  --btn-border: #333;
-  --btn-hover-bg: #333;
-  --btn-hover-text: #fff;
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
 }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+.nav-item {
+  margin: 0 15px;
 }
 
-/* Secțiunea de Introducere */
-.main-content {
-  padding: 120px 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: left;
-}
-.content {
-  position: relative;
-  font-family: 'Lato', sans-serif;
-  font-size: 35px;
-  line-height: 40px;
-  margin-top: 50px;
+.nav-link {
+  text-decoration: none;
+  color: var(--primary-text);
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-/* Blocul animat */
-.animated-wrapper {
-  display: inline;
-  white-space: nowrap;
-}
-.animated-wrapper::before,
-.animated-wrapper::after {
-  content: "";
-  margin: 0 5px;
-  color: #16a085;
-  animation: opacity 2s infinite;
-}
-@keyframes opacity {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
-.dynamic-text-wrapper {
-  display: inline-block;
-  overflow: hidden;
-  height: 40px;
-  line-height: 40px;
-}
-.dynamic-list {
-  animation: change 10s infinite;
-}
-.dynamic-list__item {
-  display: block;
-  height: 40px;
-  line-height: 40px;
-}
-@keyframes change {
-  0%, 12.66%, 100% { transform: translateY(0); }
-  16.66%, 29.32% { transform: translateY(-40px); }
-  33.32%, 45.98% { transform: translateY(-80px); }
-  49.98%, 62.64% { transform: translateY(-120px); }
-  66.64%, 79.3% { transform: translateY(-80px); }
-  83.3%, 95.96% { transform: translateY(-40px); }
+.nav-link:hover {
+  color: var(--accent-color);
 }
 
-/* Semnătura și Despre mine se păstrează la fel */
-.signature {
-  font-family: 'Lato', sans-serif;
-  font-size: 30px;
-  margin-top: 20px;
-  color: inherit;
+/* Butoanele de toggle */
+.nav-buttons {
+  display: flex;
+  align-items: center;
 }
-.signature-name {
+
+.toggle-btn {
+  background: none;
+  border: 1px solid var(--primary-text);
+  color: var(--primary-text);
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s, color 0.3s;
 }
-.signature-name:hover {
-  animation: jump 0.5s ease, pulse 1.5s infinite;
-}
-@keyframes jump {
-  0% { transform: translateY(0); }
-  30% { transform: translateY(-10px); }
-  50% { transform: translateY(0); }
-  100% { transform: translateY(0); }
-}
-@keyframes pulse {
-  0% { color: inherit; }
-  50% { color: #16a085; }
-  100% { color: inherit; }
-}
-.about-me {
-  margin-top: 30px;
-}
-.about-text {
-  font-family: 'Lato', sans-serif;
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: inherit;
-}
-.contact-btn {
-  font-family: 'Lato', sans-serif;
-  font-size: 20px;
-  padding: 12px 24px;
-  background: linear-gradient(45deg, #16a085, #13876e);
+
+.toggle-btn:hover {
+  background-color: var(--accent-color);
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.contact-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(22, 160, 133, 0.4);
 }
 
-/* Responsive pentru ecrane mici */
-@media screen and (max-width: 960px) {
-  .menu-icon {
-    display: block;
-  }
+/* Variabilele CSS pentru temele light și dark */
+:root {
+  --primary-bg: #fff;
+  --primary-text: #333;
+  --accent-color: #007BFF;
+}
+
+body.dark-mode {
+  --primary-bg: #333;
+  --primary-text: #fff;
+  --accent-color: #1E90FF;
+}
+
+/* Hamburger menu pentru mobil */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: var(--primary-text);
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Responsivitate */
+@media screen and (max-width: 768px) {
   .nav-menu {
     display: none;
     flex-direction: column;
     width: 100%;
-    background: var(--navbar-bg-scrolled);
+  }
+  .nav-menu.active {
+    display: flex;
+    background-color: var(--primary-bg);
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: 0;
+    padding: 10px 0;
   }
   .nav-item {
-    margin: 0;
     text-align: center;
+    margin: 10px 0;
   }
-  .nav-links {
-    padding: 15px;
-    width: 100%;
-    display: block;
+  .hamburger {
+    display: flex;
   }
 }
