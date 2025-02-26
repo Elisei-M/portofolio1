@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofoliu</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Pentru iconițele Devicon, asigură-te că incluzi și linkul către biblioteca Devicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
   <!-- Navbar -->
@@ -21,7 +23,7 @@
       <div class="nav-buttons">
         <!-- Butonul de limbă -->
         <button id="lang-toggle" class="toggle-btn">EN</button>
-        <!-- Buton dark/light -->
+        <!-- Butonul de dark/light -->
         <button id="mode-toggle" class="toggle-btn mode-btn">
           <span class="mode-icon" id="mode-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -68,17 +70,17 @@
         <p class="lang-text" 
            data-en="Hi! My name is Elisei M., and I am a full stack developer. I love creating web applications from scratch and bringing them to life in the browser. Working with both front-end and back-end has given me a complete perspective on the development process." 
            data-ro="Salut! Numele meu este Elisei M., și sunt un dezvoltator full stack. Îmi place să creez aplicații web de la zero și să le aduc la viață în browser. Lucrul atât cu front-end cât și cu back-end mi-a oferit o perspectivă completă asupra procesului de dezvoltare.">
-          Hi! My name is Elisei M., and I am a full stack developer. I love creating web applications from scratch and bringing them to life in the browser. Working with both front-end and back-end has given me a complete perspective on the development process.
+          Hi! My name is Elisei M., and I am a full stack developer...
         </p>
         <p class="lang-text" 
            data-en="Currently, I focus on projects that blend creative design with robust functionality. I enjoy experimenting with new technologies and finding ingenious solutions to everyday challenges." 
            data-ro="În prezent, mă concentrez pe proiecte care îmbină designul creativ cu funcționalitatea robustă. Îmi place să experimentez cu tehnologii noi și să găsesc soluții ingenioase pentru provocările cotidiene.">
-          Currently, I focus on projects that blend creative design with robust functionality. I enjoy experimenting with new technologies and finding ingenious solutions to everyday challenges.
+          Currently, I focus on projects that blend creative design with robust functionality...
         </p>
         <p class="lang-text" 
            data-en="I also have a passion for continuous learning and for sharing knowledge with other technology enthusiasts." 
            data-ro="De asemenea, am o pasiune pentru învățarea continuă și pentru împărtășirea cunoștințelor cu alți entuziaști ai tehnologiei.">
-          I also have a passion for continuous learning and for sharing knowledge with other technology enthusiasts.
+          I also have a passion for continuous learning...
         </p>
         <a class="cta-btn resume-btn" href="cv.pdf" download>Resume</a>
       </div>
@@ -88,57 +90,100 @@
     </div>
   </section>
 
-  <!-- Secțiunea Skills - exact ca în CodePen -->
-  <section id="skills">
-    <div class="skills-container">
-      <h2 class="lang-text" data-en="Skills" data-ro="Abilități">Skills</h2>
-      
-      <div class="skill">
-        <div class="skill-logo">
-          <img src="images/html-logo.png" alt="HTML">
-        </div>
-        <div class="skill-info">
-          <span class="skill-name">HTML</span>
-          <div class="progress">
-            <div class="progress-bar" style="width: 90%;"></div>
-          </div>
-        </div>
+  <!-- Secțiunea Skills -->
+  <section class="tech-stack-section" id="skills">
+    <h2 class="tech-stack-title lang-text" data-en="</Skills>" data-ro="</Abilități>">&lt;/Skills&gt;</h2>
+    <h3 class="tech-stack-subtitle lang-text" data-en="Tech Stack" data-ro="Stack-ul Tehnologic">Tech Stack</h3>
+
+    <div class="tech-stack-grid">
+      <!-- 1. HTML -->
+      <div class="tech-item" title="HTML">
+        <i class="devicon-html5-plain-wordmark colored"></i>
       </div>
-      
-      <div class="skill">
-        <div class="skill-logo">
-          <img src="images/css-logo.png" alt="CSS">
-        </div>
-        <div class="skill-info">
-          <span class="skill-name">CSS</span>
-          <div class="progress">
-            <div class="progress-bar" style="width: 80%;"></div>
-          </div>
-        </div>
+
+      <!-- 2. CSS -->
+      <div class="tech-item" title="CSS">
+        <i class="devicon-css3-plain-wordmark colored"></i>
       </div>
-      
-      <div class="skill">
-        <div class="skill-logo">
-          <img src="images/js-logo.png" alt="JavaScript">
-        </div>
-        <div class="skill-info">
-          <span class="skill-name">JavaScript</span>
-          <div class="progress">
-            <div class="progress-bar" style="width: 75%;"></div>
-          </div>
-        </div>
+
+      <!-- 3. JavaScript -->
+      <div class="tech-item" title="JavaScript">
+        <i class="devicon-javascript-plain colored"></i>
       </div>
-      
-      <div class="skill">
-        <div class="skill-logo">
-          <img src="images/java-logo.png" alt="Java">
-        </div>
-        <div class="skill-info">
-          <span class="skill-name">Java</span>
-          <div class="progress">
-            <div class="progress-bar" style="width: 60%;"></div>
-          </div>
-        </div>
+
+      <!-- 4. Bootstrap -->
+      <div class="tech-item" title="Bootstrap">
+        <i class="devicon-bootstrap-plain-wordmark colored"></i>
+      </div>
+
+      <!-- 5. GitHub -->
+      <div class="tech-item" title="GitHub">
+        <i class="devicon-github-original-wordmark"></i>
+      </div>
+
+      <!-- 6. Git -->
+      <div class="tech-item" title="Git">
+        <i class="devicon-git-plain-wordmark colored"></i>
+      </div>
+
+      <!-- 7. C -->
+      <div class="tech-item" title="C">
+        <i class="devicon-c-plain colored"></i>
+      </div>
+
+      <!-- 8. C++ -->
+      <div class="tech-item" title="C++">
+        <i class="devicon-cplusplus-plain colored"></i>
+      </div>
+
+      <!-- 9. PHP -->
+      <div class="tech-item" title="PHP">
+        <i class="devicon-php-plain colored"></i>
+      </div>
+
+      <!-- 10. MySQL -->
+      <div class="tech-item" title="MySQL">
+        <i class="devicon-mysql-plain-wordmark colored"></i>
+      </div>
+
+      <!-- 11. Photoshop -->
+      <div class="tech-item" title="Photoshop">
+        <i class="devicon-photoshop-plain colored"></i>
+      </div>
+
+      <!-- 12. Figma -->
+      <div class="tech-item" title="Figma">
+        <i class="devicon-figma-plain colored"></i>
+      </div>
+
+      <!-- 13. Cisco -->
+      <div class="tech-item" title="Cisco">
+        <i class="devicon-cisco-plain colored"></i>
+      </div>
+
+      <!-- 14. Magento -->
+      <div class="tech-item" title="Magento">
+        <i class="devicon-magento-original colored"></i>
+      </div>
+
+      <!-- 15. Shopify -->
+      <div class="tech-item" title="Shopify">
+        <i class="devicon-shopify-plain colored"></i>
+      </div>
+
+      <!-- 16. WordPress -->
+      <div class="tech-item" title="WordPress">
+        <i class="devicon-wordpress-plain-wordmark colored"></i>
+      </div>
+
+      <!-- 17. Pluriva (placeholder "P") -->
+      <div class="tech-item" title="Pluriva">
+        <span class="pluriva-text">P</span>
+      </div>
+
+      <!-- 18. Microsoft Office (folosim Windows ca placeholder) -->
+      <div class="tech-item" title="Microsoft Office">
+        <i class="devicon-windows8-original colored"></i>
       </div>
     </div>
   </section>
