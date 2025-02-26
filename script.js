@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
 
+  // Elementele secțiunii About Me care au text ce trebuie comutat
+  const langTextElements = document.querySelectorAll(".lang-text");
+
   // Variabila pentru limba curentă: 'EN' sau 'RO'
   let currentLanguage = "EN";
 
@@ -52,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     updateModeIcon(isDark);
   });
 
-  // Funcție pentru actualizarea limbii în Navbar și secțiunea de introducere
+  // Funcție pentru actualizarea limbii în Navbar, Introducere și About Me
   function updateLanguage() {
     // Actualizează textul linkurilor din Navbar
     navLinks.forEach(link => {
@@ -74,10 +77,14 @@ document.addEventListener("DOMContentLoaded", function() {
           break;
       }
     });
-    // Actualizează textul secțiunii de introducere
+    // Actualizează textul secțiunii de Introducere
     if (introDesc) {
       introDesc.textContent = introDesc.getAttribute(currentLanguage === "EN" ? "data-en" : "data-ro");
     }
+    // Actualizează textul din secțiunea About Me
+    langTextElements.forEach(elem => {
+      elem.textContent = elem.getAttribute(currentLanguage === "EN" ? "data-en" : "data-ro");
+    });
   }
 
   // Comutare limbă la clic
