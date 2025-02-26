@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
 
-  // Elementele secțiunii About Me care au text ce trebuie comutat
+  // Elementele secțiunii About Me & Skills ce au text ce trebuie comutat
   const langTextElements = document.querySelectorAll(".lang-text");
 
   // Variabila pentru limba curentă: 'EN' sau 'RO'
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     updateModeIcon(isDark);
   });
 
-  // Funcție pentru actualizarea limbii în Navbar, Introducere și About Me
+  // Funcție pentru actualizarea limbii în Navbar, Introducere, About Me și Skills
   function updateLanguage() {
     // Actualizează textul linkurilor din Navbar
     navLinks.forEach(link => {
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (introDesc) {
       introDesc.textContent = introDesc.getAttribute(currentLanguage === "EN" ? "data-en" : "data-ro");
     }
-    // Actualizează textul din secțiunea About Me
+    // Actualizează textul din secțiunile About Me & Skills
     langTextElements.forEach(elem => {
       elem.textContent = elem.getAttribute(currentLanguage === "EN" ? "data-en" : "data-ro");
     });
@@ -95,14 +95,23 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Efectul de text dinamic în Introducere
-  const dynamicWords = ["Bob", "Users", "Coders"]; // Poți modifica aceste cuvinte
+  const dynamicWords = ["Bob", "Users", "Coders"];
   let dynamicIndex = 0;
   function cycleDynamicText() {
     dynamicTextEl.textContent = dynamicWords[dynamicIndex];
     dynamicIndex = (dynamicIndex + 1) % dynamicWords.length;
   }
   cycleDynamicText();
-  setInterval(cycleDynamicText, 2000); // schimbă cuvântul la fiecare 2 secunde
+  setInterval(cycleDynamicText, 2000);
+
+  // Animate progress bars in Skills section
+  const progressBars = document.querySelectorAll('.progress');
+  progressBars.forEach(progress => {
+      const targetWidth = progress.getAttribute('data-progress');
+      setTimeout(() => {
+         progress.style.width = targetWidth;
+      }, 500);
+  });
 
   // Toggle pentru hamburger menu pe dispozitive mobile
   hamburger.addEventListener("click", () => {
