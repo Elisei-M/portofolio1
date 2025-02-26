@@ -162,6 +162,8 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .cta-btn:hover {
@@ -201,13 +203,21 @@ body {
   margin-bottom: 15px;
 }
 
+/* Stil pentru butonul Resume */
+.resume-btn {
+  margin-top: 20px;
+}
+
+/* Redimensionarea imaginii About Me */
 .about-image {
   flex: 1;
   text-align: right;
 }
 
 .about-image img {
-  max-width: 100%;
+  max-width: 350px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -239,6 +249,7 @@ body {
   }
   .about-image {
     text-align: center;
+    margin-top: 20px;
   }
 }
 
