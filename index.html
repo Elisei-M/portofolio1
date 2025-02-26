@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navbar (se menține conform implementării anterioare) -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#" class="logo">Nume</a>
@@ -39,7 +39,7 @@
           </span>
         </button>
       </div>
-      <!-- Hamburger menu pentru dispozitive mobile -->
+      <!-- Hamburger menu pentru mobil -->
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -48,7 +48,7 @@
     </div>
   </nav>
 
-  <!-- Secțiunea de Introducere (anterior implementată) -->
+  <!-- Secțiunea de Introducere -->
   <section id="introduction">
     <div class="intro-container">
       <h1>
@@ -62,15 +62,11 @@
     </div>
   </section>
 
-  <!-- Secțiunea About Me (anterior implementată) -->
+  <!-- Secțiunea About Me -->
   <section id="about">
     <div class="about-container">
       <div class="about-text">
-        <h2 class="lang-text" 
-            data-en="About Me" 
-            data-ro="Despre mine">
-          About Me
-        </h2>
+        <h2 class="lang-text" data-en="About Me" data-ro="Despre mine">About Me</h2>
         <p class="lang-text" 
            data-en="Hi! My name is Elisei M., and I am a full stack developer. I love creating web applications from scratch and bringing them to life in the browser. Working with both front-end and back-end has given me a complete perspective on the development process." 
            data-ro="Salut! Numele meu este Elisei M., și sunt un dezvoltator full stack. Îmi place să creez aplicații web de la zero și să le aduc la viață în browser. Lucrul atât cu front-end cât și cu back-end mi-a oferit o perspectivă completă asupra procesului de dezvoltare.">
@@ -99,26 +95,42 @@
   <section id="skills">
     <div class="skills-container">
       <h2 class="lang-text" data-en="Skills" data-ro="Abilități">Skills</h2>
+      
       <div class="skill">
-        <div class="skill-name">HTML</div>
+        <div class="skill-info">
+          <img src="images/html-logo.png" alt="HTML Logo">
+          <span class="skill-name">HTML</span>
+        </div>
         <div class="progress-bar">
           <div class="progress" data-progress="90%"></div>
         </div>
       </div>
+      
       <div class="skill">
-        <div class="skill-name">CSS</div>
+        <div class="skill-info">
+          <img src="images/css-logo.png" alt="CSS Logo">
+          <span class="skill-name">CSS</span>
+        </div>
         <div class="progress-bar">
           <div class="progress" data-progress="80%"></div>
         </div>
       </div>
+      
       <div class="skill">
-        <div class="skill-name">JavaScript</div>
+        <div class="skill-info">
+          <img src="images/js-logo.png" alt="JavaScript Logo">
+          <span class="skill-name">JavaScript</span>
+        </div>
         <div class="progress-bar">
           <div class="progress" data-progress="75%"></div>
         </div>
       </div>
+      
       <div class="skill">
-        <div class="skill-name">Java</div>
+        <div class="skill-info">
+          <img src="images/java-logo.png" alt="Java Logo">
+          <span class="skill-name">Java</span>
+        </div>
         <div class="progress-bar">
           <div class="progress" data-progress="60%"></div>
         </div>
@@ -126,7 +138,7 @@
     </div>
   </section>
 
-  <!-- Alte secțiuni vor urma aici -->
+  <!-- Alte secțiuni pot fi adăugate aici -->
 
   <script src="script.js"></script>
 </body>
