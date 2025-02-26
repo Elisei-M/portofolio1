@@ -1,46 +1,36 @@
-/* Definim variabile pentru temă */
-:root {
-  --bg-color: #ffffff;
-  --text-color: #333333;
-  --nav-bg: #f5f5f5;
-}
-
-.dark-mode {
-  --bg-color: #333333;
-  --text-color: #ffffff;
-  --nav-bg: #444444;
-}
-
-/* Stilizare body */
+/* Stilizare generală */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
 }
 
-/* Navbar */
+/* Navbar fix cu fundal transparent (se poate schimba la scroll) */
 .navbar {
-  background-color: var(--nav-bg);
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: transparent;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transition: background 0.5s ease;
 }
 
 .navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+.navbar-logo {
+  color: #fff;
+  font-size: 2rem;
   text-decoration: none;
-  color: var(--text-color);
 }
 
+/* Meniu de navigare */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -48,42 +38,66 @@ body {
   padding: 0;
 }
 
-.nav-menu li {
-  margin: 0 15px;
+.nav-item {
+  height: 80px;
 }
 
-.nav-menu li a {
+.nav-links {
+  color: #fff;
   text-decoration: none;
-  color: var(--text-color);
-  font-size: 1rem;
-  transition: color 0.3s;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
 }
 
-.nav-menu li a:hover {
-  color: #007BFF;
+.nav-links:hover {
+  color: #f09;
 }
 
-/* Butoane pentru limbă și temă */
-.nav-buttons button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  font-size: 1rem;
+/* Butoanele pentru limbă și temă */
+.nav-btns button {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.2rem;
   cursor: pointer;
-  background: none;
-  border: 1px solid var(--text-color);
-  border-radius: 4px;
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+  margin-left: 20px;
 }
 
-.nav-buttons button:hover {
-  background-color: var(--text-color);
-  color: var(--bg-color);
+/* Iconiță pentru meniul mobil */
+.menu-icon {
+  display: none;
 }
 
-/* Responsivitate */
-@media (max-width: 768px) {
+/* Responsive pentru ecrane mici */
+@media screen and (max-width: 960px) {
+  .menu-icon {
+    display: block;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
   .nav-menu {
-    display: none; /* Pentru simplitate; se poate adăuga un meniu hamburger */
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 80px;
+    left: 0;
+  }
+  
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-links {
+    padding: 20px;
+    width: 100%;
+    display: block;
   }
 }
