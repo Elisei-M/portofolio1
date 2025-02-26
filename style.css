@@ -1,42 +1,14 @@
-/* Reset și setări de bază */
+/* Resetare de bază */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Helvetica Neue', sans-serif;
+  background: #111; /* Fundal dark implicit */
+  color: #fff;
   transition: background 0.3s, color 0.3s;
-}
-
-/* Variabile pentru Dark Mode (implicit) */
-:root {
-  --bg-color: #121212;             /* Fundal întunecat */
-  --text-color: #ffffff;           /* Text alb */
-  --navbar-bg: rgba(0, 0, 0, 0.8);   /* Navbar dark, transparent */
-  --navbar-bg-scrolled: rgba(0, 0, 0, 0.9);
-  --navbar-text: #ffffff;          /* Text alb în navbar */
-  --btn-border: #ffffff;
-  --btn-hover-bg: #ffffff;
-  --btn-hover-text: #121212;
-}
-
-/* Variabile pentru Light Mode */
-.light-mode {
-  --bg-color: #ffffff;
-  --text-color: #333333;
-  --navbar-bg: rgba(255, 255, 255, 0.9);
-  --navbar-bg-scrolled: rgba(255, 255, 255, 1);
-  --navbar-text: #333333;
-  --btn-border: #333333;
-  --btn-hover-bg: #333333;
-  --btn-hover-text: #ffffff;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
 }
 
 /* Navbar */
@@ -45,28 +17,25 @@ body {
   top: 0;
   width: 100%;
   padding: 20px 50px;
-  transition: background-color 0.3s, padding 0.3s;
   z-index: 100;
-  background-color: var(--navbar-bg);
+  background: transparent;
+  transition: background 0.3s ease, padding 0.3s ease;
 }
-
 .navbar.scrolled {
-  background-color: var(--navbar-bg-scrolled);
+  background: rgba(0, 0, 0, 0.9);
   padding: 10px 50px;
 }
-
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: 1300px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
 .navbar-logo {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--navbar-text);
+  color: #fff;
   text-decoration: none;
 }
 
@@ -76,49 +45,51 @@ body {
   display: flex;
   align-items: center;
 }
-
 .nav-item {
   margin-left: 20px;
 }
-
 .nav-links {
   text-decoration: none;
-  color: var(--navbar-text);
+  color: #fff;
   font-size: 1rem;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
   padding: 5px 10px;
 }
-
 .nav-links:hover {
   color: #f09;
 }
 
 /* Butoane pentru limbă și temă */
-.nav-btns .btn {
+.nav-btns {
+  display: flex;
+  align-items: center;
+}
+.btn-lang,
+.btn-theme {
   background: none;
-  border: 2px solid var(--btn-border);
-  color: var(--navbar-text);
+  border: 2px solid #fff;
+  color: #fff;
   padding: 5px 15px;
   margin-left: 20px;
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
+}
+.btn-lang:hover,
+.btn-theme:hover {
+  background: #fff;
+  color: #111;
 }
 
-.nav-btns .btn:hover {
-  background-color: var(--btn-hover-bg);
-  color: var(--btn-hover-text);
-}
-
-/* Iconița pentru meniul mobil */
+/* Meniu mobil */
 .menu-icon {
   display: none;
-  color: var(--navbar-text);
+  color: #fff;
   font-size: 1.8rem;
   cursor: pointer;
 }
 
-/* Responsive pentru ecrane mici */
+/* Responsive */
 @media screen and (max-width: 960px) {
   .menu-icon {
     display: block;
@@ -126,11 +97,11 @@ body {
   .nav-menu {
     display: none;
     flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 80px;
     left: 0;
-    width: 100%;
-    background: var(--navbar-bg-scrolled);
   }
   .nav-item {
     margin: 0;
