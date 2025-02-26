@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // Elementele Navbar
   const modeToggle = document.getElementById("mode-toggle");
   const modeIcon = document.getElementById("mode-icon");
   const langToggle = document.getElementById("lang-toggle");
@@ -6,6 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
+  // Elementele Secțiunii de Introducere
+  const introDesc = document.querySelector(".intro-desc");
+  const dynamicTextEl = document.querySelector(".dynamic-text");
+
+  // Variabila pentru limba curentă: 'EN' sau 'RO'
   let currentLanguage = "EN";
 
   // Funcție pentru schimbarea iconiței dark/light cu tranziție lină
@@ -46,10 +52,9 @@ document.addEventListener("DOMContentLoaded", function() {
     updateModeIcon(isDark);
   });
 
-  // Comutare limbă: actualizează textul linkurilor și al butonului de limbă
-  langToggle.addEventListener("click", () => {
-    currentLanguage = currentLanguage === "EN" ? "RO" : "EN";
-    langToggle.textContent = currentLanguage;
+  // Funcție pentru actualizarea limbii în Navbar și secțiunea de introducere
+  function updateLanguage() {
+    // Actualizează textul linkurilor din Navbar
     navLinks.forEach(link => {
       switch(link.getAttribute("href")) {
         case "#home":
@@ -69,10 +74,34 @@ document.addEventListener("DOMContentLoaded", function() {
           break;
       }
     });
+    // Actualizează textul secțiunii de introducere
+    if (introDesc) {
+      introDesc.textContent = introDesc.getAttribute(currentLanguage === "EN" ? "data-en" : "data-ro");
+    }
+  }
+
+  // Comutare limbă la clic
+  langToggle.addEventListener("click", () => {
+    currentLanguage = currentLanguage === "EN" ? "RO" : "EN";
+    langToggle.textContent = currentLanguage;
+    updateLanguage();
   });
+
+  // Efectul de text dinamic în Introducere
+  const dynamicWords = ["Bob", "Users", "Coders"]; // Poți modifica aceste cuvinte
+  let dynamicIndex = 0;
+  function cycleDynamicText() {
+    dynamicTextEl.textContent = dynamicWords[dynamicIndex];
+    dynamicIndex = (dynamicIndex + 1) % dynamicWords.length;
+  }
+  cycleDynamicText();
+  setInterval(cycleDynamicText, 2000); // schimbă cuvântul la fiecare 2 secunde
 
   // Toggle pentru hamburger menu pe dispozitive mobile
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
+
+  // Inițializare limbă (la pornirea paginii)
+  updateLanguage();
 });
