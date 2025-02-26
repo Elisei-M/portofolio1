@@ -1,4 +1,4 @@
-/* Resetare și setări de bază */
+/* Reset și setări de bază */
 * {
   margin: 0;
   padding: 0;
@@ -7,35 +7,35 @@
 
 body {
   font-family: 'Helvetica Neue', sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Variabile pentru Light Mode */
+/* Variabile pentru Dark Mode (implicit) */
 :root {
-  --background: #ffffff;                /* Fundal alb */
-  --text-color: #333333;                /* Text închis */
-  --navbar-bg: transparent;             /* Navbar transparent la început */
-  --navbar-bg-scrolled: rgba(0, 0, 0, 0.8); /* Navbar solid la scroll */
-  --navbar-text: #ffffff;               /* Text alb în navbar */
+  --bg-color: #121212;             /* Fundal întunecat */
+  --text-color: #ffffff;           /* Text alb */
+  --navbar-bg: rgba(0, 0, 0, 0.8);   /* Navbar dark, transparent */
+  --navbar-bg-scrolled: rgba(0, 0, 0, 0.9);
+  --navbar-text: #ffffff;          /* Text alb în navbar */
   --btn-border: #ffffff;
   --btn-hover-bg: #ffffff;
-  --btn-hover-text: #333333;
-}
-
-/* Variabile pentru Dark Mode */
-.dark-mode {
-  --background: #121212;
-  --text-color: #f1f1f1;
-  --navbar-bg: transparent;
-  --navbar-bg-scrolled: rgba(0, 0, 0, 0.9);
-  --navbar-text: #f1f1f1;
-  --btn-border: #f1f1f1;
-  --btn-hover-bg: #f1f1f1;
   --btn-hover-text: #121212;
 }
 
+/* Variabile pentru Light Mode */
+.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --navbar-bg: rgba(255, 255, 255, 0.9);
+  --navbar-bg-scrolled: rgba(255, 255, 255, 1);
+  --navbar-text: #333333;
+  --btn-border: #333333;
+  --btn-hover-bg: #333333;
+  --btn-hover-text: #ffffff;
+}
+
 body {
-  background-color: var(--background);
+  background-color: var(--bg-color);
   color: var(--text-color);
 }
 
@@ -93,7 +93,7 @@ body {
   color: #f09;
 }
 
-/* Butoane (language & theme) */
+/* Butoane pentru limbă și temă */
 .nav-btns .btn {
   background: none;
   border: 2px solid var(--btn-border);
