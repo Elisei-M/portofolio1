@@ -119,23 +119,16 @@ body {
   overflow: hidden;
   transition: background 0.3s ease;
 }
-/* Stilul de bază pentru toggle-ball */
 .btn-theme .toggle-ball {
   position: absolute;
   top: 2px;
   left: 2px;
   width: 21px;
   height: 21px;
-  background: #fff; /* implicit alb */
+  background: #fff;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
-
-/* În light mode, schimbăm culoarea toggle-ball-ului */
-.light-mode .btn-theme .toggle-ball {
-  background: #333; /* cercul devine închis la culoare pentru contrast */
-}
-
 
 /* Meniu mobil */
 .menu-icon {
