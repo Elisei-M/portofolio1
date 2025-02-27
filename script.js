@@ -22,21 +22,23 @@ document.addEventListener("DOMContentLoaded", function() {
   // Limba curentă
   let currentLanguage = "EN";
 
-  // Stocăm coordonatele inițiale pentru ochii iepurașului
+  // Coordonate inițiale pentru ochii iepurașului
   const leftEyeInitial = { x: 40, y: 45 };
   const rightEyeInitial = { x: 60, y: 45 };
 
-  // Funcția pentru schimbarea modului dark/light
+  // Funcție pentru schimbarea iconiței dark/light
   function updateModeIcon(isDark) {
     modeIcon.style.opacity = 0;
     setTimeout(() => {
       if (isDark) {
+        // Icon lună
         modeIcon.innerHTML = `
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path>
           </svg>
         `;
       } else {
+        // Icon soare
         modeIcon.innerHTML = `
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <circle cx="12" cy="12" r="5"></circle>
@@ -55,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 200);
   }
 
+  // Eveniment pentru schimbarea temei
   modeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     document.body.classList.toggle("light-mode");
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
     updateModeIcon(isDark);
   });
 
-  // Funcția pentru actualizarea limbii
+  // Funcție pentru actualizarea limbii
   function updateLanguage() {
     navLinks.forEach(link => {
       switch(link.getAttribute("href")) {
@@ -91,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  // Eveniment pentru schimbarea limbii
   langToggle.addEventListener("click", () => {
     currentLanguage = currentLanguage === "EN" ? "RO" : "EN";
     langToggle.textContent = currentLanguage;
@@ -107,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
   cycleDynamicText();
   setInterval(cycleDynamicText, 2000);
 
-  // Caruselul proiectelor
+  // Funcții pentru navigarea în caruselul proiectelor
   function updateCarousel() {
     const slideWidth = carouselItems[0].getBoundingClientRect().width;
     carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
@@ -136,12 +140,16 @@ document.addEventListener("DOMContentLoaded", function() {
     customCursor.style.top = `${e.clientY}px`;
   });
 
-  // Mouse follower pentru iepurașul din navbar:
-  // Se calculează offset-ul față de centrul feței iepurașului
+  // Mouse follower pentru iepurașul din navbar
   const bunnySVG = document.getElementById('bunny-svg');
   const leftEye = document.getElementById('eye-left');
   const rightEye = document.getElementById('eye-right');
   const logo = document.getElementById('logo');
+
+  // Coordonate inițiale pentru ochi (SVG)
+  const leftEyeInitial = { x: 40, y: 45 };
+  const rightEyeInitial = { x: 60, y: 45 };
+
   if (bunnySVG && leftEye && rightEye && logo) {
     logo.addEventListener('mousemove', function(e) {
       const rect = logo.getBoundingClientRect();
@@ -168,5 +176,6 @@ document.addEventListener("DOMContentLoaded", function() {
     navMenu.classList.toggle("active");
   });
 
+  // Inițializare limbă
   updateLanguage();
 });
