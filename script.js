@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
-  // Elementele secțiunilor ce trebuie traduse
+  // Elementele secțiunilor de text ce trebuie traduse
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
   const langTextElements = document.querySelectorAll(".lang-text");
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function updateLanguage() {
     navLinks.forEach(link => {
       switch(link.getAttribute("href")) {
-        case "#home":
+        case "#introduction":
           link.textContent = currentLanguage === "EN" ? "Home" : "Acasă";
           break;
         case "#about":
