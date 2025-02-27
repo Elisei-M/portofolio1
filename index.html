@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofoliu</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Devicon pentru iconițe (Skills, Footer) -->
+  <!-- Devicon pentru iconițe (Skills, Footer LinkedIn & GitHub) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <!-- Font Awesome pentru Instagram și Mail -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -13,33 +13,30 @@
 <body class="dark-mode">
   <!-- Custom Cursor -->
   <div class="custom-cursor"></div>
-
-  <!-- Animal global (iepuraș care urmărește mouse-ul) -->
-  <div id="global-animal">
-    <svg id="bunny-svg" width="100" height="100" viewBox="0 0 100 100">
-      <!-- Capul iepurașului -->
-      <circle cx="50" cy="50" r="45" fill="#fff" stroke="#333" stroke-width="2" />
-      <!-- Urechi -->
-      <path d="M20,20 Q50,0 40,30" fill="#fff" stroke="#333" stroke-width="2" />
-      <path d="M80,20 Q50,0 60,30" fill="#fff" stroke="#333" stroke-width="2" />
-      <!-- Ochiul stâng (grup cu pupila) -->
-      <g id="left-eye" transform="translate(35,45)">
-        <circle cx="0" cy="0" r="6" fill="#333" />
-        <circle id="left-pupil" cx="0" cy="0" r="2.5" fill="#fff" />
-      </g>
-      <!-- Ochiul drept (grup cu pupila) -->
-      <g id="right-eye" transform="translate(65,45)">
-        <circle cx="0" cy="0" r="6" fill="#333" />
-        <circle id="right-pupil" cx="0" cy="0" r="2.5" fill="#fff" />
-      </g>
-    </svg>
-  </div>
-
+  
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <!-- În acest exemplu păstrăm un logo text pentru Navbar, dar animaluțul global este vizibil pe site -->
-      <div class="logo-text">My Portfolio</div>
+      <!-- Logo: Iepuraș SVG în locul logo-ului clasic -->
+      <div class="logo" id="logo">
+        <svg id="bunny-svg" width="80" height="80" viewBox="0 0 100 100">
+          <!-- Fața iepurașului -->
+          <circle cx="50" cy="50" r="45" fill="#fff" stroke="#333" stroke-width="2" />
+          <!-- Urechi -->
+          <path d="M20,20 Q50,0 40,30" fill="#fff" stroke="#333" stroke-width="2" />
+          <path d="M80,20 Q50,0 60,30" fill="#fff" stroke="#333" stroke-width="2" />
+          <!-- Ochiul stâng -->
+          <g id="left-eye" transform="translate(35,45)">
+            <circle cx="0" cy="0" r="6" fill="#333" />
+            <circle id="left-pupil" cx="0" cy="0" r="2.5" fill="#fff" />
+          </g>
+          <!-- Ochiul drept -->
+          <g id="right-eye" transform="translate(65,45)">
+            <circle cx="0" cy="0" r="6" fill="#333" />
+            <circle id="right-pupil" cx="0" cy="0" r="2.5" fill="#fff" />
+          </g>
+        </svg>
+      </div>
       <ul class="nav-menu">
         <li class="nav-item"><a href="#introduction" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
@@ -72,7 +69,9 @@
       </div>
     </div>
   </nav>
-
+  
+  <!-- Restul secțiunilor (Introducere, About Me, Skills, Projects, Footer) rămân neschimbate -->
+  
   <!-- Secțiunea de Introducere -->
   <section id="introduction">
     <div class="intro-container">
