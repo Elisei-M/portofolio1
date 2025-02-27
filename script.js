@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Limba curentă
   let currentLanguage = "EN";
 
-  // Stocăm valorile inițiale ale ochilor
+  // Stocăm coordonatele inițiale pentru ochii iepurașului
   const leftEyeInitial = { x: 40, y: 45 };
   const rightEyeInitial = { x: 60, y: 45 };
 
@@ -136,7 +136,8 @@ document.addEventListener("DOMContentLoaded", function() {
     customCursor.style.top = `${e.clientY}px`;
   });
 
-  // Mouse follower pentru iepurașul din navbar (menținând poziția inițială + offset)
+  // Mouse follower pentru iepurașul din navbar:
+  // Se calculează offset-ul față de centrul feței iepurașului
   const bunnySVG = document.getElementById('bunny-svg');
   const leftEye = document.getElementById('eye-left');
   const rightEye = document.getElementById('eye-right');
@@ -152,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const maxPupilOffset = 4;
       const offsetX = Math.cos(angle) * maxPupilOffset;
       const offsetY = Math.sin(angle) * maxPupilOffset;
-      // Adăugăm offset-ul calculat la coordonatele inițiale ale ochilor
+      // Poziționăm ochii pornind de la valorile inițiale
       leftEye.setAttribute('transform', `translate(${leftEyeInitial.x + offsetX}, ${leftEyeInitial.y + offsetY})`);
       rightEye.setAttribute('transform', `translate(${rightEyeInitial.x + offsetX}, ${rightEyeInitial.y + offsetY})`);
     });
