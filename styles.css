@@ -8,7 +8,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Variabilele CSS */
+/* Variabile CSS */
 :root {
   --primary-bg: #fff;
   --primary-text: #333;
@@ -55,7 +55,7 @@ body.dark-mode {
   justify-content: space-between;
 }
 
-/* Logo cu iepuraș (SVG) */
+/* Logo cu iepuraș modernizat */
 .logo {
   position: relative;
   width: 80px;
@@ -222,6 +222,11 @@ body.dark-mode {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 /* Secțiunea Skills (Tech Stack) */
