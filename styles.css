@@ -77,7 +77,6 @@ body.light-mode {
 }
 #eye-left, #eye-right {
   transition: transform 0.2s ease-out;
-  /* Asigură o margine fină pentru evidențiere */
   stroke: #333;
   stroke-width: 1;
 }
@@ -121,7 +120,6 @@ body.light-mode {
   box-shadow: 0 0 10px rgba(30,144,255,0.7);
 }
 .light-mode .toggle-btn {
-  /* Butoane în light mode: folosim culori mai deschise */
   background: linear-gradient(45deg, #87CEFA, #FFA07A);
 }
 .mode-btn {
