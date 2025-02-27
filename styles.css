@@ -144,6 +144,13 @@ body.light-mode {
   transition: 0.4s;
 }
 
+/* Secțiunile (Introducere, About, Skills, Projects, Footer) */
+section {
+  background: none; /* Eliminăm background-urile locale */
+  position: relative;
+  padding-bottom: 60px;
+}
+
 /* Secțiunea de Introducere */
 #introduction {
   padding: 120px 20px 80px;
@@ -242,12 +249,10 @@ body.light-mode {
 /* Secțiunea Skills (Tech Stack) */
 .tech-stack-section {
   padding: var(--section-padding);
-  background: linear-gradient(135deg, #2C3E50, #1a1a1a);
+  /* Folosim background-ul global din body; nu definim unul specific aici */
   color: #ecf0f1;
   text-align: center;
-}
-body.light-mode .tech-stack-section {
-  background: var(--bg-gradient-light);
+  transition: background var(--transition-speed);
 }
 .tech-stack-title {
   font-family: 'Lato', sans-serif;
@@ -310,6 +315,7 @@ body.light-mode .tech-stack-section {
 .projects-section {
   padding: 80px 20px;
   text-align: center;
+  transition: background var(--transition-speed);
 }
 .projects-section .section-title {
   font-size: 2rem;
@@ -364,6 +370,7 @@ footer {
   background: #0f0f0f;
   padding: 40px 20px;
   text-align: center;
+  transition: background var(--transition-speed);
   color: #ecf0f1;
   margin-top: 40px;
 }
@@ -408,13 +415,6 @@ footer {
 }
 .footer-created a:hover {
   color: #fff;
-}
-
-/* Eliminăm background-uri individuale la secțiuni pentru uniformitate */
-section {
-  background: none;
-  position: relative;
-  padding-bottom: 60px;
 }
 
 /* Tranziții subtile între secțiuni */
