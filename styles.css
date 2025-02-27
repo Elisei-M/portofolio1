@@ -65,7 +65,7 @@ body.dark-mode {
 .mouse-animal {
   width: 100%;
   height: 100%;
-  background-image: url("images/mouse.png");
+  background-image: url("images/mouse.png"); /* Asigură-te că imaginea este plasată corect */
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
