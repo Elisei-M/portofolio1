@@ -17,24 +17,28 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <!-- Logo: Iepuraș SVG în locul logo-ului clasic -->
+      <!-- Logo: Iepuraș SVG cu ochi care urmăresc mouse-ul -->
       <div class="logo" id="logo">
-        <svg id="bunny-svg" width="80" height="80" viewBox="0 0 100 100">
-          <!-- Fața iepurașului -->
-          <circle cx="50" cy="50" r="45" fill="#fff" stroke="#333" stroke-width="2" />
+        <svg id="bunny-svg" width="100" height="100" viewBox="0 0 100 100">
           <!-- Urechi -->
-          <path d="M20,20 Q50,0 40,30" fill="#fff" stroke="#333" stroke-width="2" />
-          <path d="M80,20 Q50,0 60,30" fill="#fff" stroke="#333" stroke-width="2" />
+          <ellipse cx="30" cy="20" rx="8" ry="20" fill="#fff" stroke="#333" stroke-width="2"/>
+          <ellipse cx="70" cy="20" rx="8" ry="20" fill="#fff" stroke="#333" stroke-width="2"/>
+          <!-- Capul -->
+          <circle cx="50" cy="50" r="30" fill="#fff" stroke="#333" stroke-width="2"/>
           <!-- Ochiul stâng -->
-          <g id="left-eye" transform="translate(35,45)">
-            <circle cx="0" cy="0" r="6" fill="#333" />
-            <circle id="left-pupil" cx="0" cy="0" r="2.5" fill="#fff" />
+          <g id="left-eye" transform="translate(40,45)">
+            <circle cx="0" cy="0" r="4" fill="#333" />
+            <circle id="left-pupil" cx="0" cy="0" r="1.5" fill="#fff" />
           </g>
           <!-- Ochiul drept -->
-          <g id="right-eye" transform="translate(65,45)">
-            <circle cx="0" cy="0" r="6" fill="#333" />
-            <circle id="right-pupil" cx="0" cy="0" r="2.5" fill="#fff" />
+          <g id="right-eye" transform="translate(60,45)">
+            <circle cx="0" cy="0" r="4" fill="#333" />
+            <circle id="right-pupil" cx="0" cy="0" r="1.5" fill="#fff" />
           </g>
+          <!-- Nas -->
+          <polygon points="50,55 47,62 53,62" fill="#ff69b4" />
+          <!-- Gura -->
+          <path d="M45,65 Q50,70 55,65" stroke="#333" stroke-width="1" fill="none" />
         </svg>
       </div>
       <ul class="nav-menu">
@@ -69,8 +73,6 @@
       </div>
     </div>
   </nav>
-  
-  <!-- Restul secțiunilor (Introducere, About Me, Skills, Projects, Footer) rămân neschimbate -->
   
   <!-- Secțiunea de Introducere -->
   <section id="introduction">
