@@ -54,6 +54,12 @@ document.addEventListener("DOMContentLoaded", function() {
   // Eveniment pentru schimbarea temei
   modeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
+    // Actualizează background-ul în funcție de mod
+    if(document.body.classList.contains("dark-mode")) {
+      document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg-gradient-dark');
+    } else {
+      document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg-gradient-light');
+    }
     const isDark = document.body.classList.contains("dark-mode");
     updateModeIcon(isDark);
   });
@@ -133,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
     customCursor.style.top = `${e.clientY}px`;
   });
 
-  // Mouse follower pentru iepurașul din navbar
+  // Mouse follower pentru iepurașul din navbar (urmărirea cursorului de către pupile)
   const bunnySVG = document.getElementById('bunny-svg');
   const leftEye = document.getElementById('eye-left');
   const rightEye = document.getElementById('eye-right');
@@ -145,9 +151,8 @@ document.addEventListener("DOMContentLoaded", function() {
       const centerY = rect.top + rect.height / 2;
       const dx = e.clientX - centerX;
       const dy = e.clientY - centerY;
-      // Calculăm un unghi și o deplasare pentru a face mișcarea mai complexă
       const angle = Math.atan2(dy, dx);
-      const maxPupilOffset = 4; // ajustează pentru un efect mai pronunțat
+      const maxPupilOffset = 4;
       const offsetX = Math.cos(angle) * maxPupilOffset;
       const offsetY = Math.sin(angle) * maxPupilOffset;
       leftEye.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
