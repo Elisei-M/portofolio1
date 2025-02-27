@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
   // Eveniment pentru schimbarea temei
   modeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-    // Actualizează background-ul în funcție de mod
+    document.body.classList.toggle("light-mode");
+    // Actualizează background-ul pe baza noii clase
     if(document.body.classList.contains("dark-mode")) {
       document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg-gradient-dark');
     } else {
@@ -139,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
     customCursor.style.top = `${e.clientY}px`;
   });
 
-  // Mouse follower pentru iepurașul din navbar (urmărirea cursorului de către pupile)
+  // Mouse follower pentru iepurașul din navbar
   const bunnySVG = document.getElementById('bunny-svg');
   const leftEye = document.getElementById('eye-left');
   const rightEye = document.getElementById('eye-right');
