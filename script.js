@@ -7,22 +7,22 @@ document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
-  // Elementele secțiunilor de text ce trebuie traduse
+  // Elementele de text pentru traducere
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
   const langTextElements = document.querySelectorAll(".lang-text");
 
-  // Elementele pentru caruselul proiectelor
+  // Elementele caruselului proiectelor
   const carouselTrack = document.querySelector(".carousel-track");
   const prevButton = document.querySelector(".carousel-button.prev");
   const nextButton = document.querySelector(".carousel-button.next");
   const carouselItems = document.querySelectorAll(".carousel-item");
   let currentIndex = 0;
 
-  // Variabila pentru limba curentă: 'EN' sau 'RO'
+  // Limba curentă
   let currentLanguage = "EN";
 
-  // Funcție pentru schimbarea iconiței dark/light
+  // Funcția pentru schimbarea modului dark/light
   function updateModeIcon(isDark) {
     modeIcon.style.opacity = 0;
     setTimeout(() => {
@@ -51,21 +51,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 200);
   }
 
-  // Eveniment pentru schimbarea temei
   modeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     document.body.classList.toggle("light-mode");
-    // Actualizează background-ul pe baza noii clase
-    if(document.body.classList.contains("dark-mode")) {
-      document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg-gradient-dark');
-    } else {
-      document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg-gradient-light');
-    }
     const isDark = document.body.classList.contains("dark-mode");
     updateModeIcon(isDark);
   });
 
-  // Funcție pentru actualizarea limbii
+  // Funcția pentru actualizarea limbii
   function updateLanguage() {
     navLinks.forEach(link => {
       switch(link.getAttribute("href")) {
@@ -94,14 +87,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Eveniment pentru schimbarea limbii
   langToggle.addEventListener("click", () => {
     currentLanguage = currentLanguage === "EN" ? "RO" : "EN";
     langToggle.textContent = currentLanguage;
     updateLanguage();
   });
 
-  // Efectul de text dinamic în Introducere
+  // Text dinamic în Introducere
   const dynamicWords = ["Bob", "Users", "Coders"];
   let dynamicIndex = 0;
   function cycleDynamicText() {
@@ -111,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
   cycleDynamicText();
   setInterval(cycleDynamicText, 2000);
 
-  // Funcții pentru navigarea în caruselul proiectelor
+  // Caruselul proiectelor
   function updateCarousel() {
     const slideWidth = carouselItems[0].getBoundingClientRect().width;
     carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
@@ -140,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     customCursor.style.top = `${e.clientY}px`;
   });
 
-  // Mouse follower pentru iepurașul din navbar
+  // Mouse follower pentru iepurașul din navbar (urmărirea cursorului de către ochi)
   const bunnySVG = document.getElementById('bunny-svg');
   const leftEye = document.getElementById('eye-left');
   const rightEye = document.getElementById('eye-right');
@@ -170,6 +162,5 @@ document.addEventListener("DOMContentLoaded", function() {
     navMenu.classList.toggle("active");
   });
 
-  // Inițializare limbă la pornire
   updateLanguage();
 });
