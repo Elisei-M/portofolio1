@@ -133,6 +133,22 @@ document.addEventListener("DOMContentLoaded", function() {
     customCursor.style.top = `${e.clientY}px`;
   });
 
+  // Mouse follower pentru animalutul din logo
+  const mouseAnimal = document.querySelector('.mouse-animal');
+  const logo = document.querySelector('.logo');
+  if (mouseAnimal && logo) {
+    logo.addEventListener('mousemove', function(e) {
+      const rect = logo.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+      // Ajustează factorul pentru a obține efectul dorit
+      mouseAnimal.style.transform = `translate(${(offsetX - rect.width / 2) * 0.3}px, ${(offsetY - rect.height / 2) * 0.3}px)`;
+    });
+    logo.addEventListener('mouseleave', function() {
+      mouseAnimal.style.transform = 'translate(0, 0)';
+    });
+  }
+
   // Hamburger menu pentru mobil
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
