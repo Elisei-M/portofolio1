@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofoliu</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Devicon pentru iconițe (Skills, Footer) -->
+  <!-- Devicon pentru iconițe (Skills, Footer LinkedIn & GitHub) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <!-- Font Awesome pentru Instagram și Mail -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -17,16 +17,19 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <!-- Înlocuim logo-ul cu un animaluț SVG cu ochi care urmăresc mouse-ul -->
-      <div class="logo">
-        <svg id="mouse-svg" width="50" height="50" viewBox="0 0 100 100">
-          <!-- Capul mouse-ului -->
-          <circle cx="50" cy="50" r="45" fill="#ccc" stroke="#333" stroke-width="2" />
+      <!-- Înlocuim logo-ul cu un iepuraș SVG care urmărește mișcarea mouse-ului -->
+      <div class="logo" id="logo">
+        <svg id="bunny-svg" width="80" height="80" viewBox="0 0 80 80">
+          <!-- Fața iepurașului -->
+          <circle cx="40" cy="40" r="30" fill="#fff" stroke="#333" stroke-width="2" />
+          <!-- Urechea stângă -->
+          <path d="M20,10 Q40,0 30,30" fill="#fff" stroke="#333" stroke-width="2" />
+          <!-- Urechea dreaptă -->
+          <path d="M60,10 Q40,0 50,30" fill="#fff" stroke="#333" stroke-width="2" />
           <!-- Ochiul stâng -->
-          <circle id="eye-left" cx="35" cy="40" r="5" fill="#333" />
+          <circle id="eye-left" cx="30" cy="40" r="4" fill="#333" />
           <!-- Ochiul drept -->
-          <circle id="eye-right" cx="65" cy="40" r="5" fill="#333" />
-          <!-- Alte detalii pot fi adăugate după preferințe -->
+          <circle id="eye-right" cx="50" cy="40" r="4" fill="#333" />
         </svg>
       </div>
       <ul class="nav-menu">
@@ -61,6 +64,8 @@
       </div>
     </div>
   </nav>
+  
+  <!-- Restul secțiunilor rămân identice (Introducere, About Me, Skills, Projects, Footer) -->
   
   <!-- Secțiunea de Introducere -->
   <section id="introduction">
