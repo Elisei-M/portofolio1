@@ -133,29 +133,30 @@ document.addEventListener("DOMContentLoaded", function() {
     customCursor.style.top = `${e.clientY}px`;
   });
 
-  // Mouse follower pentru iepurașul din navbar (global animal)
+  // Mouse follower pentru iepurașul din navbar
   const bunnySVG = document.getElementById('bunny-svg');
   const leftEye = document.getElementById('eye-left');
   const rightEye = document.getElementById('eye-right');
-  const globalAnimal = document.getElementById('bunny-svg').parentElement; // containerul SVG
-  // Folosim fereastra pentru evenimentul mousemove, astfel încât animalul să "urmească" mișcarea
-  document.addEventListener('mousemove', (e) => {
-    // Calculăm unghiul relativ la centrul SVG-ului (poziționat fix pe pagină)
-    const rect = globalAnimal.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const dx = e.clientX - centerX;
-    const dy = e.clientY - centerY;
-    const angle = Math.atan2(dy, dx);
-    // Calculăm deplasarea maximă pentru pupile
-    const maxPupilOffset = 3;
-    const offsetX = Math.cos(angle) * maxPupilOffset;
-    const offsetY = Math.sin(angle) * maxPupilOffset;
-    // Actualizăm transformările ochilor
-    leftEye.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
-    rightEye.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
-  });
-  
+  const logo = document.getElementById('logo');
+  if (bunnySVG && leftEye && rightEye && logo) {
+    logo.addEventListener('mousemove', function(e) {
+      const rect = logo.getBoundingClientRect();
+      // Calculează poziția cursorului relativ la centru
+      const offsetX = e.clientX - rect.left - rect.width / 2;
+      const offsetY = e.clientY - rect.top - rect.height / 2;
+      // Limitează mișcarea ochilor (factorul poate fi ajustat)
+      const maxOffset = 4;
+      const moveX = Math.max(-maxOffset, Math.min(maxOffset, offsetX * 0.1));
+      const moveY = Math.max(-maxOffset, Math.min(maxOffset, offsetY * 0.1));
+      leftEye.setAttribute('transform', `translate(${moveX}, ${moveY})`);
+      rightEye.setAttribute('transform', `translate(${moveX}, ${moveY})`);
+    });
+    logo.addEventListener('mouseleave', function() {
+      leftEye.setAttribute('transform', 'translate(0, 0)');
+      rightEye.setAttribute('transform', 'translate(0, 0)');
+    });
+  }
+
   // Hamburger menu pentru mobil
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
