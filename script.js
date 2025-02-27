@@ -141,15 +141,17 @@ document.addEventListener("DOMContentLoaded", function() {
   if (bunnySVG && leftEye && rightEye && logo) {
     logo.addEventListener('mousemove', function(e) {
       const rect = logo.getBoundingClientRect();
-      // Calculează poziția cursorului relativ la centrul logo-ului
-      const offsetX = e.clientX - rect.left - rect.width / 2;
-      const offsetY = e.clientY - rect.top - rect.height / 2;
-      // Folosește un factor mai mare pentru o mișcare mai complexă
-      const factor = 0.2;
-      const moveX = offsetX * factor;
-      const moveY = offsetY * factor;
-      leftEye.setAttribute('transform', `translate(${moveX}, ${moveY})`);
-      rightEye.setAttribute('transform', `translate(${moveX}, ${moveY})`);
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const dx = e.clientX - centerX;
+      const dy = e.clientY - centerY;
+      // Calculăm un unghi și o deplasare pentru a face mișcarea mai complexă
+      const angle = Math.atan2(dy, dx);
+      const maxPupilOffset = 4; // ajustează pentru un efect mai pronunțat
+      const offsetX = Math.cos(angle) * maxPupilOffset;
+      const offsetY = Math.sin(angle) * maxPupilOffset;
+      leftEye.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+      rightEye.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
     });
     logo.addEventListener('mouseleave', function() {
       leftEye.setAttribute('transform', 'translate(0, 0)');
