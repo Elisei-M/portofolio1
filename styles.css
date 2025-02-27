@@ -3,21 +3,31 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: var(--primary-bg);
+  background: var(--bg-gradient);
   color: var(--primary-text);
-  transition: background-color 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Variabile CSS */
+/* Variabile CSS și Background Gradients */
 :root {
   --primary-bg: #fff;
   --primary-text: #333;
   --accent-color: #007BFF;
+  --bg-gradient-light: linear-gradient(135deg, #e2e2e2, #fff);
+  --bg-gradient-dark: linear-gradient(135deg, #2c3e50, #000);
+  --bg-gradient: var(--bg-gradient-dark);
 }
 body.dark-mode {
   --primary-bg: #333;
   --primary-text: #fff;
   --accent-color: #1E90FF;
+  --bg-gradient: var(--bg-gradient-dark);
+}
+body.light-mode {
+  --primary-bg: #fff;
+  --primary-text: #333;
+  --accent-color: #007BFF;
+  --bg-gradient: var(--bg-gradient-light);
 }
 
 /* Custom Cursor */
@@ -55,7 +65,7 @@ body.dark-mode {
   justify-content: space-between;
 }
 
-/* Logo cu iepuraș modernizat */
+/* Logo cu iepuraș (SVG modernizat) */
 .logo {
   position: relative;
   width: 80px;
@@ -68,6 +78,13 @@ body.dark-mode {
 }
 #eye-left, #eye-right {
   transition: transform 0.2s ease-out;
+}
+
+/* Navbar Text (pentru situații când e nevoie) */
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-text);
 }
 
 /* Restul Navbar-ului */
@@ -134,7 +151,7 @@ body.dark-mode {
 #introduction {
   padding: 120px 20px 80px;
   text-align: left;
-  background: var(--primary-bg);
+  background: var(--bg-gradient);
   color: var(--primary-text);
 }
 .intro-container {
@@ -186,7 +203,7 @@ body.dark-mode {
 /* Secțiunea About Me */
 #about {
   padding: 80px 20px;
-  background-color: var(--primary-bg);
+  background: var(--bg-gradient);
   color: var(--primary-text);
 }
 .about-container {
@@ -297,7 +314,7 @@ body.dark-mode {
 /* Secțiunea Projects (Carusel) */
 .projects-section {
   padding: 80px 20px;
-  background-color: var(--primary-bg);
+  background: var(--bg-gradient);
   color: var(--primary-text);
   text-align: center;
 }
