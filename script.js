@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function() {
   // Limba curentă
   let currentLanguage = "EN";
 
+  // Stocăm valorile inițiale ale ochilor
+  const leftEyeInitial = { x: 40, y: 45 };
+  const rightEyeInitial = { x: 60, y: 45 };
+
   // Funcția pentru schimbarea modului dark/light
   function updateModeIcon(isDark) {
     modeIcon.style.opacity = 0;
@@ -132,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
     customCursor.style.top = `${e.clientY}px`;
   });
 
-  // Mouse follower pentru iepurașul din navbar
+  // Mouse follower pentru iepurașul din navbar (menținând poziția inițială + offset)
   const bunnySVG = document.getElementById('bunny-svg');
   const leftEye = document.getElementById('eye-left');
   const rightEye = document.getElementById('eye-right');
@@ -148,12 +152,13 @@ document.addEventListener("DOMContentLoaded", function() {
       const maxPupilOffset = 4;
       const offsetX = Math.cos(angle) * maxPupilOffset;
       const offsetY = Math.sin(angle) * maxPupilOffset;
-      leftEye.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
-      rightEye.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+      // Adăugăm offset-ul calculat la coordonatele inițiale ale ochilor
+      leftEye.setAttribute('transform', `translate(${leftEyeInitial.x + offsetX}, ${leftEyeInitial.y + offsetY})`);
+      rightEye.setAttribute('transform', `translate(${rightEyeInitial.x + offsetX}, ${rightEyeInitial.y + offsetY})`);
     });
     logo.addEventListener('mouseleave', function() {
-      leftEye.setAttribute('transform', 'translate(0, 0)');
-      rightEye.setAttribute('transform', 'translate(0, 0)');
+      leftEye.setAttribute('transform', `translate(${leftEyeInitial.x}, ${leftEyeInitial.y})`);
+      rightEye.setAttribute('transform', `translate(${rightEyeInitial.x}, ${rightEyeInitial.y})`);
     });
   }
 
