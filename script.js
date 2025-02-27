@@ -141,13 +141,13 @@ document.addEventListener("DOMContentLoaded", function() {
   if (bunnySVG && leftEye && rightEye && logo) {
     logo.addEventListener('mousemove', function(e) {
       const rect = logo.getBoundingClientRect();
-      // Calculează poziția cursorului relativ la centru
+      // Calculează poziția cursorului relativ la centrul logo-ului
       const offsetX = e.clientX - rect.left - rect.width / 2;
       const offsetY = e.clientY - rect.top - rect.height / 2;
-      // Limitează mișcarea ochilor (factorul poate fi ajustat)
-      const maxOffset = 4;
-      const moveX = Math.max(-maxOffset, Math.min(maxOffset, offsetX * 0.1));
-      const moveY = Math.max(-maxOffset, Math.min(maxOffset, offsetY * 0.1));
+      // Folosește un factor mai mare pentru o mișcare mai complexă
+      const factor = 0.2;
+      const moveX = offsetX * factor;
+      const moveY = offsetY * factor;
       leftEye.setAttribute('transform', `translate(${moveX}, ${moveY})`);
       rightEye.setAttribute('transform', `translate(${moveX}, ${moveY})`);
     });
