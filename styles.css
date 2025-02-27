@@ -148,7 +148,6 @@ body.light-mode {
 #introduction {
   padding: 120px 20px 80px;
   text-align: left;
-  transition: background var(--transition-speed);
 }
 .intro-container {
   max-width: 800px;
@@ -199,7 +198,6 @@ body.light-mode {
 /* Secțiunea About Me */
 #about {
   padding: 80px 20px;
-  transition: background var(--transition-speed);
 }
 .about-container {
   max-width: 1200px;
@@ -247,7 +245,6 @@ body.light-mode {
   background: linear-gradient(135deg, #2C3E50, #1a1a1a);
   color: #ecf0f1;
   text-align: center;
-  transition: background var(--transition-speed);
 }
 body.light-mode .tech-stack-section {
   background: var(--bg-gradient-light);
@@ -312,7 +309,6 @@ body.light-mode .tech-stack-section {
 /* Secțiunea Projects (Carusel) */
 .projects-section {
   padding: 80px 20px;
-  transition: background var(--transition-speed);
   text-align: center;
 }
 .projects-section .section-title {
@@ -368,7 +364,6 @@ footer {
   background: #0f0f0f;
   padding: 40px 20px;
   text-align: center;
-  transition: background var(--transition-speed);
   color: #ecf0f1;
   margin-top: 40px;
 }
@@ -415,11 +410,14 @@ footer {
   color: #fff;
 }
 
-/* Tranziții subtile între secțiuni */
+/* Eliminăm background-uri individuale la secțiuni pentru uniformitate */
 section {
+  background: none;
   position: relative;
   padding-bottom: 60px;
 }
+
+/* Tranziții subtile între secțiuni */
 section::after {
   content: "";
   position: absolute;
