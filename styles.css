@@ -1,7 +1,7 @@
-/* Variabile CSS pentru temă */
+/* Variabile CSS și Background Gradients */
 :root {
-  --bg-dark: linear-gradient(135deg, #2C3E50, #000);
-  --bg-light: linear-gradient(135deg, #f4f4f4, #ffffff);
+  --bg-gradient-dark: linear-gradient(135deg, #2C3E50, #000);
+  --bg-gradient-light: linear-gradient(135deg, #f4f4f4, #ffffff);
   --text-light: #ecf0f1;
   --text-dark: #333;
   --accent: #1E90FF;
@@ -9,21 +9,23 @@
   --section-padding: 60px 40px;
 }
 
-/* Setările de bază pentru body */
+/* Setările de bază */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  background: var(--bg-gradient-dark);
+  color: var(--text-light);
   transition: background var(--transition-speed), color var(--transition-speed);
 }
 
 body.dark-mode {
-  background: var(--bg-dark);
+  background: var(--bg-gradient-dark);
   color: var(--text-light);
 }
 
 body.light-mode {
-  background: var(--bg-light);
+  background: var(--bg-gradient-light);
   color: var(--text-dark);
 }
 
@@ -42,15 +44,15 @@ body.light-mode {
   transition: transform 0.1s ease-out;
 }
 
-/* Navbar */
+/* Navbar cu fundal blurat */
 .navbar {
-  background-color: var(--primary-bg);
+  background-color: rgba(0, 0, 0, 0.5); /* Semitransparent */
+  backdrop-filter: blur(10px);
   padding: 10px 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: background var(--transition-speed);
 }
 .nav-container {
@@ -62,7 +64,7 @@ body.light-mode {
   justify-content: space-between;
 }
 
-/* Logo (Iepuraș SVG modernizat) */
+/* Logo cu iepuraș */
 .logo {
   position: relative;
   width: 80px;
@@ -99,23 +101,26 @@ body.light-mode {
   display: flex;
   align-items: center;
 }
+/* Butoane uniforme în navbar */
 .toggle-btn {
   background: linear-gradient(45deg, #1E90FF, #FF4500);
   border: none;
   color: #fff;
-  padding: 8px 14px;
+  padding: 8px 16px;
   margin-left: 10px;
   border-radius: 30px;
   cursor: pointer;
+  font-size: 0.9rem;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 .toggle-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 0 10px rgba(30,144,255,0.7);
 }
 .mode-btn {
   padding: 8px;
   border-radius: 50%;
+  font-size: 0.9rem;
 }
 .mode-icon {
   display: inline-block;
@@ -234,7 +239,7 @@ body.light-mode {
 /* Secțiunea Skills (Tech Stack) */
 .tech-stack-section {
   padding: var(--section-padding);
-  background-color: #0f0f0f;
+  background: #0f0f0f;
   color: #ecf0f1;
   text-align: center;
   transition: background var(--transition-speed);
@@ -352,7 +357,7 @@ body.light-mode {
 
 /* Secțiunea Footer */
 footer {
-  background-color: #0f0f0f;
+  background: #0f0f0f;
   padding: 40px 20px;
   text-align: center;
   transition: background var(--transition-speed);
@@ -403,7 +408,7 @@ footer {
   color: #fff;
 }
 
-/* Tranziții subtile între secțiuni (folosind o umbră discretă) */
+/* Tranziții subtile între secțiuni */
 section {
   position: relative;
   padding-bottom: 60px;
@@ -419,7 +424,7 @@ section::after {
   pointer-events: none;
 }
 
-/* Responsivitate Generală */
+/* Responsivitate */
 @media screen and (max-width: 768px) {
   .nav-menu {
     display: none;
