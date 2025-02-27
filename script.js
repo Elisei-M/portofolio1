@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const rect = logo.getBoundingClientRect();
       const offsetX = e.clientX - rect.left;
       const offsetY = e.clientY - rect.top;
-      // Ajustează factorul pentru a obține efectul dorit
+      // Ajustează factorul pentru efectul dorit (poți modifica 0.3 după preferințe)
       mouseAnimal.style.transform = `translate(${(offsetX - rect.width / 2) * 0.3}px, ${(offsetY - rect.height / 2) * 0.3}px)`;
     });
     logo.addEventListener('mouseleave', function() {
