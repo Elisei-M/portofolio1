@@ -144,9 +144,9 @@ body.light-mode {
   transition: 0.4s;
 }
 
-/* Secțiuni – Eliminăm background-uri locale */
+/* Secțiunile (Introducere, About, Skills, Projects, Footer) */
 section {
-  background: none;
+  background: none; /* Eliminăm background-urile locale */
   position: relative;
   padding-bottom: 60px;
 }
@@ -249,6 +249,7 @@ section {
 /* Secțiunea Skills (Tech Stack) */
 .tech-stack-section {
   padding: var(--section-padding);
+  /* Folosim background-ul global din body; nu definim unul specific aici */
   color: #ecf0f1;
   text-align: center;
   transition: background var(--transition-speed);
@@ -330,98 +331,32 @@ section {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
-
-/* Fiecare item = un card orizontal: stânga (text) + dreapta (imagine) */
 .carousel-item {
   min-width: 100%;
   box-sizing: border-box;
   padding: 20px;
 }
-.project-content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: space-between;
-}
-.project-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.project-icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 10px;
-}
-.project-title {
-  font-size: 1.8rem;
-  margin: 0 0 10px;
-}
-.project-desc {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
-.project-buttons {
-  display: flex;
-  gap: 10px;
-}
-.project-btn {
-  background: linear-gradient(45deg, var(--accent), #FF4500);
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-}
-.project-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px var(--accent);
-}
-.project-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-.project-image img {
+.carousel-item img {
   max-width: 100%;
-  max-height: 50vh; /* Evită decuparea */
-  object-fit: contain;
-  object-position: center;
   border-radius: 10px;
-  transition: transform var(--transition-speed);
 }
-.project-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+.carousel-item h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
 }
-
-/* Butoane carusel (săgeți) */
+/* Butoane pentru carusel */
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(45deg, var(--accent), #FF4500);
+  background: rgba(0,0,0,0.5);
   border: none;
   color: #fff;
-  font-size: 1.2rem;
-  padding: 12px;
+  font-size: 2rem;
+  padding: 10px;
   cursor: pointer;
   border-radius: 50%;
   z-index: 10;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.carousel-button:hover {
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 0 10px var(--accent);
-}
-.carousel-button i {
-  pointer-events: none; /* iconul să nu fie selectabil */
 }
 .carousel-button.prev {
   left: 10px;
@@ -529,15 +464,5 @@ section::after {
   }
   .projects-section .section-title {
     text-align: center;
-  }
-  .project-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .project-image {
-    margin-top: 20px;
-  }
-  .project-title {
-    font-size: 1.5rem;
   }
 }
