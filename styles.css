@@ -8,7 +8,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Variabilele CSS */
+/* Variabile CSS */
 :root {
   --primary-bg: #fff;
   --primary-text: #333;
