@@ -1,7 +1,7 @@
 /* Variabile CSS și Background Gradients */
 :root {
   --bg-gradient-dark: linear-gradient(135deg, #2C3E50, #000);
-  --bg-gradient-light: linear-gradient(135deg, #f4f4f4, #ffffff);
+  --bg-gradient-light: linear-gradient(135deg, #dcdcdc, #f4f4f4);
   --text-light: #ecf0f1;
   --text-dark: #333;
   --accent: #1E90FF;
@@ -77,6 +77,9 @@ body.light-mode {
 }
 #eye-left, #eye-right {
   transition: transform 0.2s ease-out;
+  /* Asigură o margine fină pentru evidențiere */
+  stroke: #333;
+  stroke-width: 1;
 }
 
 /* Restul Navbar-ului */
@@ -101,7 +104,7 @@ body.light-mode {
   display: flex;
   align-items: center;
 }
-/* Butoane uniforme în navbar */
+/* Butoane uniforme */
 .toggle-btn {
   background: linear-gradient(45deg, #1E90FF, #FF4500);
   border: none;
@@ -116,6 +119,10 @@ body.light-mode {
 .toggle-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(30,144,255,0.7);
+}
+.light-mode .toggle-btn {
+  /* Butoane în light mode: folosim culori mai deschise */
+  background: linear-gradient(45deg, #87CEFA, #FFA07A);
 }
 .mode-btn {
   padding: 8px;
@@ -239,13 +246,13 @@ body.light-mode {
 /* Secțiunea Skills (Tech Stack) */
 .tech-stack-section {
   padding: var(--section-padding);
-  background: #0f0f0f;
+  background: linear-gradient(135deg, #2C3E50, #1a1a1a);
   color: #ecf0f1;
   text-align: center;
   transition: background var(--transition-speed);
 }
 body.light-mode .tech-stack-section {
-  background: linear-gradient(135deg, #f4f4f4, #ffffff);
+  background: var(--bg-gradient-light);
 }
 .tech-stack-title {
   font-family: 'Lato', sans-serif;
