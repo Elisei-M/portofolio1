@@ -133,19 +133,27 @@ document.addEventListener("DOMContentLoaded", function() {
     customCursor.style.top = `${e.clientY}px`;
   });
 
-  // Mouse follower pentru animalutul din logo
-  const mouseAnimal = document.querySelector('.mouse-animal');
-  const logo = document.querySelector('.logo');
-  if (mouseAnimal && logo) {
+  // Mouse follower pentru iepurașul din logo
+  const bunnySVG = document.getElementById('bunny-svg');
+  const leftEye = document.getElementById('eye-left');
+  const rightEye = document.getElementById('eye-right');
+  const logo = document.getElementById('logo');
+  if (bunnySVG && leftEye && rightEye && logo) {
     logo.addEventListener('mousemove', function(e) {
       const rect = logo.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const offsetY = e.clientY - rect.top;
-      // Ajustează factorul pentru efectul dorit (poți modifica 0.3 după preferințe)
-      mouseAnimal.style.transform = `translate(${(offsetX - rect.width / 2) * 0.3}px, ${(offsetY - rect.height / 2) * 0.3}px)`;
+      // Calculează offsetul față de centrul logo-ului
+      const offsetX = e.clientX - rect.left - rect.width / 2;
+      const offsetY = e.clientY - rect.top - rect.height / 2;
+      // Limitează mișcarea ochilor
+      const maxMove = 3; // Ajustează cât de mult se mișcă ochii
+      const moveX = Math.max(-maxMove, Math.min(maxMove, offsetX * 0.1));
+      const moveY = Math.max(-maxMove, Math.min(maxMove, offsetY * 0.1));
+      leftEye.setAttribute('transform', `translate(${moveX}, ${moveY})`);
+      rightEye.setAttribute('transform', `translate(${moveX}, ${moveY})`);
     });
     logo.addEventListener('mouseleave', function() {
-      mouseAnimal.style.transform = 'translate(0, 0)';
+      leftEye.setAttribute('transform', 'translate(0, 0)');
+      rightEye.setAttribute('transform', 'translate(0, 0)');
     });
   }
 
