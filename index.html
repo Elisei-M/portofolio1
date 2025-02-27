@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofoliu</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Devicon pentru iconițe -->
+  <!-- Devicon pentru iconițe (Skills, Footer LinkedIn & GitHub) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <!-- Font Awesome pentru Instagram și Mail -->
+  <!-- Font Awesome pentru iconițe (săgeți carusel, Instagram, Envelope etc.) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body class="dark-mode">
   <!-- Custom Cursor -->
   <div class="custom-cursor"></div>
   
-  <!-- Navbar cu fundal blurat -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <!-- Logo: Iepuraș SVG modernizat -->
+      <!-- Logo (Iepuraș) -->
       <div class="logo" id="logo">
         <svg id="bunny-svg" width="100" height="100" viewBox="0 0 100 100">
           <!-- Urechi -->
@@ -41,6 +41,7 @@
           <path d="M45,67 Q50,72 55,67" stroke="#333" stroke-width="1" fill="none"/>
         </svg>
       </div>
+      <!-- Meniu -->
       <ul class="nav-menu">
         <li class="nav-item"><a href="#introduction" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
@@ -48,10 +49,12 @@
         <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+      <!-- Butoane EN/RO și Dark/Light -->
       <div class="nav-buttons">
         <button id="lang-toggle" class="toggle-btn">EN</button>
         <button id="mode-toggle" class="toggle-btn mode-btn">
           <span class="mode-icon" id="mode-icon">
+            <!-- Icon soare inițial -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -66,6 +69,7 @@
           </span>
         </button>
       </div>
+      <!-- Hamburger menu (pentru mobile) -->
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -82,7 +86,7 @@
       </h1>
       <p class="intro-desc" 
          data-en="I am a full stack developer passionate about technology, with expertise in both front-end and back-end. I enjoy challenges that drive me to innovate and continuously evolve." 
-         data-ro="Sunt un dezvoltator full stack pasionat de tehnologie, cu expertiza atât în front-end cât și în back-end. Îmi plac provocările care mă determină să inovez și să evoluez continuu.">
+         data-ro="Sunt un dezvoltator full stack pasionat de tehnologie, cu expertiză atât în front-end cât și în back-end. Îmi plac provocările care mă determină să inovez și să evoluez continuu.">
       </p>
       <button class="cta-btn" id="talk-btn">Let's talk</button>
     </div>
@@ -96,17 +100,17 @@
         <p class="lang-text" 
            data-en="Hi! My name is Elisei M., and I am a full stack developer. I love creating web applications from scratch and bringing them to life in the browser. Working with both front-end and back-end has given me a complete perspective on the development process." 
            data-ro="Salut! Numele meu este Elisei M., și sunt un dezvoltator full stack. Îmi place să creez aplicații web de la zero și să le aduc la viață în browser. Lucrul atât cu front-end cât și cu back-end mi-a oferit o perspectivă completă asupra procesului de dezvoltare.">
-          Hi! My name is Elisei M., and I am a full stack developer...
+          Hi! My name is Elisei M....
         </p>
         <p class="lang-text" 
            data-en="Currently, I focus on projects that blend creative design with robust functionality. I enjoy experimenting with new technologies and finding ingenious solutions to everyday challenges." 
            data-ro="În prezent, mă concentrez pe proiecte care îmbină designul creativ cu funcționalitatea robustă. Îmi place să experimentez cu tehnologii noi și să găsesc soluții ingenioase pentru provocările cotidiene.">
-          Currently, I focus on projects that blend creative design with robust functionality...
+          Currently, I focus on projects...
         </p>
         <p class="lang-text" 
            data-en="I also have a passion for continuous learning and for sharing knowledge with other technology enthusiasts." 
            data-ro="De asemenea, am o pasiune pentru învățarea continuă și pentru împărtășirea cunoștințelor cu alți entuziaști ai tehnologiei.">
-          I also have a passion for continuous learning...
+          I also have a passion for...
         </p>
         <a class="cta-btn resume-btn" href="cv.pdf" download>Resume</a>
       </div>
@@ -116,12 +120,12 @@
     </div>
   </section>
   
-  <!-- Secțiunea Skills (Tech Stack) -->
+  <!-- Secțiunea Skills -->
   <section class="tech-stack-section" id="skills">
     <h2 class="tech-stack-title lang-text" data-en="</Skills>" data-ro="</Abilități>">&lt;/Skills&gt;</h2>
     <h3 class="tech-stack-subtitle lang-text" data-en="Tech Stack" data-ro="Stack-ul Tehnologic">Tech Stack</h3>
     <div class="tech-stack-grid">
-      <!-- Exemplu de 18 iteme -->
+      <!-- Exemplu de iteme -->
       <div class="tech-item" title="HTML">
         <i class="devicon-html5-plain-wordmark colored"></i>
       </div>
@@ -179,65 +183,67 @@
     </div>
   </section>
   
-<!-- Secțiunea Projects (Carusel cu 6 proiecte) -->
-<section id="projects" class="projects-section">
-  <h2 class="section-title lang-text" data-en="</Projects>" data-ro="</Proiecte>">&lt;/Projects&gt;</h2>
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <!-- Proiect 1 -->
-      <div class="carousel-item">
-        <div class="project-content">
-          <!-- Partea stângă: info proiect -->
-          <div class="project-info">
-            <img src="images/project1-icon.png" alt="Project Icon" class="project-icon">
-            <h3 class="project-title">Project One</h3>
-            <p class="project-desc">
-              O scurtă descriere a proiectului. Ce face proiectul, tehnologiile folosite etc.
-            </p>
-            <div class="project-buttons">
-              <a href="https://example.com/live1" target="_blank" class="project-btn">Live View</a>
-              <a href="https://github.com/yourrepo/project1" target="_blank" class="project-btn">View Code</a>
+  <!-- Secțiunea Projects (Carusel cu 6 proiecte) -->
+  <section id="projects" class="projects-section">
+    <h2 class="section-title lang-text" data-en="</Projects>" data-ro="</Proiecte>">&lt;/Projects&gt;</h2>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        
+        <!-- Proiect 1 -->
+        <div class="carousel-item">
+          <div class="project-content">
+            <!-- Info stânga -->
+            <div class="project-info">
+              <img src="images/project1-icon.png" alt="Project Icon" class="project-icon">
+              <h3 class="project-title">Project One</h3>
+              <p class="project-desc">
+                O scurtă descriere a proiectului: 
+                ce face, ce tehnologii folosește etc.
+              </p>
+              <div class="project-buttons">
+                <a href="https://example.com/live1" target="_blank" class="project-btn">Live View</a>
+                <a href="https://github.com/yourrepo/project1" target="_blank" class="project-btn">View Code</a>
+              </div>
+            </div>
+            <!-- Imagine dreapta -->
+            <div class="project-image">
+              <img src="images/project1-screenshot.jpg" alt="Project 1 Screenshot">
             </div>
           </div>
-          <!-- Partea dreaptă: imagine proiect -->
-          <div class="project-image">
-            <img src="images/project1-screenshot.jpg" alt="Project 1 Screenshot">
-          </div>
         </div>
-      </div>
-      <!-- Proiect 2 -->
-      <div class="carousel-item">
-        <div class="project-content">
-          <div class="project-info">
-            <img src="images/project2-icon.png" alt="Project Icon" class="project-icon">
-            <h3 class="project-title">Project Two</h3>
-            <p class="project-desc">
-              O scurtă descriere a proiectului...
-            </p>
-            <div class="project-buttons">
-              <a href="https://example.com/live2" target="_blank" class="project-btn">Live View</a>
-              <a href="https://github.com/yourrepo/project2" target="_blank" class="project-btn">View Code</a>
+        
+        <!-- Proiect 2 -->
+        <div class="carousel-item">
+          <div class="project-content">
+            <div class="project-info">
+              <img src="images/project2-icon.png" alt="Project Icon" class="project-icon">
+              <h3 class="project-title">Project Two</h3>
+              <p class="project-desc">
+                Descriere scurtă a proiectului...
+              </p>
+              <div class="project-buttons">
+                <a href="https://example.com/live2" target="_blank" class="project-btn">Live View</a>
+                <a href="https://github.com/yourrepo/project2" target="_blank" class="project-btn">View Code</a>
+              </div>
+            </div>
+            <div class="project-image">
+              <img src="images/project2-screenshot.jpg" alt="Project 2 Screenshot">
             </div>
           </div>
-          <div class="project-image">
-            <img src="images/project2-screenshot.jpg" alt="Project 2 Screenshot">
-          </div>
         </div>
+        
+        <!-- Proiect 3, 4, 5, 6... -->
+        
       </div>
-      <!-- Proiect 3, 4, 5, 6 ... -->
+      <!-- Butoane carusel (stânga/dreapta) -->
+      <button class="carousel-button prev">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button class="carousel-button next">
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </div>
-    <!-- Butoane carusel -->
-    <button class="carousel-button prev">
-      <i class="fas fa-arrow-left"></i>
-    </button>
-    <button class="carousel-button next">
-      <i class="fas fa-arrow-right"></i>
-    </button>
-  </div>
-</section>
-
-
-
+  </section>
   
   <!-- Secțiunea Footer -->
   <footer>
