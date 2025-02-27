@@ -7,10 +7,17 @@ document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
-  // Elementele secțiunilor ce trebuie traduse (Introducere, About Me, Skills)
+  // Elementele secțiunilor ce trebuie traduse
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
   const langTextElements = document.querySelectorAll(".lang-text");
+
+  // Elementele pentru caruselul proiectelor
+  const carouselTrack = document.querySelector(".carousel-track");
+  const prevButton = document.querySelector(".carousel-button.prev");
+  const nextButton = document.querySelector(".carousel-button.next");
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  let currentIndex = 0;
 
   // Variabila pentru limba curentă: 'EN' sau 'RO'
   let currentLanguage = "EN";
@@ -80,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Eveniment pentru comutarea limbii
+  // Eveniment pentru schimbarea limbii
   langToggle.addEventListener("click", () => {
     currentLanguage = currentLanguage === "EN" ? "RO" : "EN";
     langToggle.textContent = currentLanguage;
@@ -97,7 +104,36 @@ document.addEventListener("DOMContentLoaded", function() {
   cycleDynamicText();
   setInterval(cycleDynamicText, 2000);
 
-  // Eveniment pentru hamburger menu
+  // Funcții pentru navigarea în caruselul proiectelor
+  function updateCarousel() {
+    const slideWidth = carouselItems[0].getBoundingClientRect().width;
+    carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+  nextButton.addEventListener("click", () => {
+    if (currentIndex < carouselItems.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateCarousel();
+  });
+  prevButton.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = carouselItems.length - 1;
+    }
+    updateCarousel();
+  });
+
+  // Custom cursor
+  const customCursor = document.querySelector('.custom-cursor');
+  document.addEventListener('mousemove', (e) => {
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
+  });
+
+  // Hamburger menu pentru mobil
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
