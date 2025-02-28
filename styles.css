@@ -270,7 +270,7 @@ section {
 .tech-stack-grid {
   display: grid;
   /* 4 coloane a câte 120px fiecare */
-  grid-template-columns: repeat(4, 120px);
+  grid-template-columns: repeat(4, 220px);
   /* spațiu vertical (row-gap) și orizontal (column-gap) */
   row-gap: 15px;
   column-gap: 10px;
