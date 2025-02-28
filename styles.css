@@ -317,59 +317,136 @@ section {
   }
 }
 
-/* Secțiunea Projects (Carusel) */
+/* Secțiunea Projects (layout orizontal) */
 .projects-section {
   padding: 80px 20px;
-  text-align: center;
-  transition: background var(--transition-speed);
-}
-.projects-section .section-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-.carousel-container {
-  position: relative;
-  overflow: hidden;
   max-width: 1200px;
   margin: 0 auto;
 }
-.carousel-track {
+.projects-section .section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Fiecare proiect = .project 
+   fade-in la scroll (inițial opacity: 0, transform: 20px) */
+.project {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+  opacity: 0; 
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
-.carousel-item {
-  min-width: 100%;
-  box-sizing: border-box;
-  padding: 20px;
+.project.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
-.carousel-item img {
+
+/* .reverse = imagine stânga, text dreapta */
+.project.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Info text (titlu, descriere, butoane) */
+.project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.project-title {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--accent);
+}
+.project-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.project-buttons {
+  display: flex;
+  gap: 15px;
+}
+.project-btn {
+  background: linear-gradient(45deg, var(--accent), #FF4500);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.project-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(30,144,255,0.7);
+}
+.project-btn i {
+  font-size: 1.1rem;
+}
+
+/* Imagine */
+.project-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.project-image img {
   max-width: 100%;
   border-radius: 10px;
-}
-.carousel-item h3 {
-  margin-top: 10px;
-  font-size: 1.5rem;
-}
-/* Butoane pentru carusel */
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 10px;
   cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
-.carousel-button.prev {
-  left: 10px;
+.project-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-.carousel-button.next {
-  right: 10px;
+
+/* Lightbox (pentru imaginea mărită) */
+.lightbox {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 9999;
 }
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsivitate la ecrane mici */
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+    text-align: center;
+  }
+  .project.reverse {
+    flex-direction: column;
+  }
+  .project-image {
+    margin-top: 20px;
+  }
+}
+
 
 /* Secțiunea Footer */
 footer {
