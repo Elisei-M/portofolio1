@@ -18,12 +18,10 @@ body {
   color: var(--text-light);
   transition: background var(--transition-speed), color var(--transition-speed);
 }
-
 body.dark-mode {
   background: var(--bg-gradient-dark);
   color: var(--text-light);
 }
-
 body.light-mode {
   background: var(--bg-gradient-light);
   color: var(--text-dark);
@@ -145,7 +143,7 @@ body.light-mode {
 
 /* Secțiunile (Introducere, About, Skills, Projects, Footer) */
 section {
-  background: none; /* Eliminăm background-urile locale */
+  background: none;
   position: relative;
   padding-bottom: 60px;
 }
@@ -268,26 +266,23 @@ section {
   color: #fff;
 }
 
-/* 
-   Schimbăm de la 'gap: 15px' la 
-   row-gap: 15px (sus-jos) și column-gap: 5px (stânga-dreapta) 
-   pentru a micșora spațiul orizontal dintre iteme.
-*/
+/* 4 coloane fixe (120px), spațiu mic între coloane, item mai mare, icon mai mare */
 .tech-stack-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
+  /* 4 coloane a câte 120px fiecare */
+  grid-template-columns: repeat(4, 120px);
+  /* spațiu vertical (row-gap) și orizontal (column-gap) */
   row-gap: 15px;
-  column-gap: 5px;
-  justify-items: center;
+  column-gap: 10px;
+  justify-content: center; /* centrează tot grid-ul în container */
   align-items: center;
 }
-
 .tech-item {
   background-color: #1c1c1c;
   border-radius: 12px;
-  width: 100px;
-  height: 100px;
+  /* Având 120px pe coloană, item-ul poate avea tot 120px */
+  width: 120px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -298,11 +293,12 @@ section {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
+/* Icon mai mare */
 .tech-item i {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 .pluriva-text {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #fff;
   font-weight: bold;
 }
@@ -310,13 +306,14 @@ section {
 /* Media queries adaptate */
 @media (max-width: 992px) {
   .tech-stack-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* spațiul orizontal rămâne 5px, vertical 15px */
+    /* 2 coloane a câte 120px */
+    grid-template-columns: repeat(2, 120px);
   }
 }
 @media (max-width: 576px) {
   .tech-stack-grid {
-    grid-template-columns: repeat(2, 1fr);
+    /* Poți pune tot 2 coloane sau 1, cum dorești */
+    grid-template-columns: repeat(2, 120px);
   }
 }
 
@@ -468,8 +465,6 @@ section::after {
     text-align: center;
     margin-top: 20px;
   }
-  /* Deja setat la 2 coloane la max-width: 992px, 
-     deci rămâne la 2 coloane și sub 768px */
   .projects-section .section-title {
     text-align: center;
   }
