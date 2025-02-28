@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Limba curentă
   let currentLanguage = "EN";
 
-  // Coordonate inițiale ochi iepuraș
+  // Coordonate inițiale pentru ochii iepurașului
   const leftEyeInitial = { x: 40, y: 45 };
   const rightEyeInitial = { x: 60, y: 45 };
 
