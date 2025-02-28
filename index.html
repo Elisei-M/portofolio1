@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Devicon pentru iconițe -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <!-- Font Awesome pentru Instagram și Mail -->
+  <!-- Font Awesome pentru Instagram, Mail și GitHub icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body class="dark-mode">
@@ -179,41 +179,161 @@
     </div>
   </section>
   
-  <!-- Secțiunea Projects (Carusel cu 6 proiecte) -->
+  <!-- Secțiunea Projects (6 proiecte, layout orizontal, fade-in, lightbox) -->
   <section id="projects" class="projects-section">
     <h2 class="section-title lang-text" data-en="Projects" data-ro="Proiecte">Projects</h2>
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <div class="carousel-item">
-          <img src="images/project1.jpg" alt="Project 1">
-          <h3 class="lang-text" data-en="Project One" data-ro="Proiectul Unu">Project One</h3>
-        </div>
-        <div class="carousel-item">
-          <img src="images/project2.jpg" alt="Project 2">
-          <h3 class="lang-text" data-en="Project Two" data-ro="Proiectul Doi">Project Two</h3>
-        </div>
-        <div class="carousel-item">
-          <img src="images/project3.jpg" alt="Project 3">
-          <h3 class="lang-text" data-en="Project Three" data-ro="Proiectul Trei">Project Three</h3>
-        </div>
-        <div class="carousel-item">
-          <img src="images/project4.jpg" alt="Project 4">
-          <h3 class="lang-text" data-en="Project Four" data-ro="Proiectul Patru">Project Four</h3>
-        </div>
-        <div class="carousel-item">
-          <img src="images/project5.jpg" alt="Project 5">
-          <h3 class="lang-text" data-en="Project Five" data-ro="Proiectul Cinci">Project Five</h3>
-        </div>
-        <div class="carousel-item">
-          <img src="images/project6.jpg" alt="Project 6">
-          <h3 class="lang-text" data-en="Project Six" data-ro="Proiectul Șase">Project Six</h3>
+    
+    <!-- Proiect 1 -->
+    <div class="project">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project One" data-ro="Proiectul Unu">Project One</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project one." 
+           data-ro="Scurtă descriere în Română pentru proiectul unu.">
+          Short description in English for project one.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
         </div>
       </div>
-      <button class="carousel-button prev">&lt;</button>
-      <button class="carousel-button next">&gt;</button>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 1" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 2 (reverse layout) -->
+    <div class="project reverse">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Two" data-ro="Proiectul Doi">Project Two</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project two." 
+           data-ro="Scurtă descriere în Română pentru proiectul doi.">
+          Short description in English for project two.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 2" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 3 -->
+    <div class="project">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Three" data-ro="Proiectul Trei">Project Three</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project three." 
+           data-ro="Scurtă descriere în Română pentru proiectul trei.">
+          Short description in English for project three.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 3" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 4 (reverse) -->
+    <div class="project reverse">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Four" data-ro="Proiectul Patru">Project Four</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project four." 
+           data-ro="Scurtă descriere în Română pentru proiectul patru.">
+          Short description in English for project four.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 4" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 5 -->
+    <div class="project">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Five" data-ro="Proiectul Cinci">Project Five</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project five." 
+           data-ro="Scurtă descriere în Română pentru proiectul cinci.">
+          Short description in English for project five.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 5" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 6 (reverse) -->
+    <div class="project reverse">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Six" data-ro="Proiectul Șase">Project Six</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project six." 
+           data-ro="Scurtă descriere în Română pentru proiectul șase.">
+          Short description in English for project six.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 6" class="project-img">
+      </div>
     </div>
   </section>
   
+  <!-- Lightbox pentru imaginile mărite -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img id="lightboxImg" src="" alt="Lightbox">
+  </div>
+
   <!-- Secțiunea Footer -->
   <footer>
     <div class="footer-container">
