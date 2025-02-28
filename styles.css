@@ -1,471 +1,364 @@
-/* Variabile CSS și Background Gradients */
-:root {
-  --bg-gradient-dark: linear-gradient(135deg, #2C3E50, #000);
-  --bg-gradient-light: linear-gradient(135deg, #dcdcdc, #f4f4f4);
-  --text-light: #ecf0f1;
-  --text-dark: #333;
-  --accent: #1E90FF;
-  --transition-speed: 0.3s;
-  --section-padding: 60px 40px;
-}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofoliu</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Devicon pentru iconițe -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- Font Awesome pentru Instagram, Mail și GitHub icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body class="dark-mode">
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  
+  <!-- Navbar cu fundal blurat -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Logo: Iepuraș SVG modernizat -->
+      <div class="logo" id="logo">
+        <svg id="bunny-svg" width="100" height="100" viewBox="0 0 100 100">
+          <!-- Urechi -->
+          <ellipse cx="30" cy="15" rx="5" ry="15" fill="#fff" stroke="#333" stroke-width="1.5" />
+          <ellipse cx="70" cy="15" rx="5" ry="15" fill="#fff" stroke="#333" stroke-width="1.5" />
+          <!-- Fața -->
+          <circle cx="50" cy="50" r="30" fill="#fff" stroke="#333" stroke-width="2" />
+          <!-- Ochiul stâng -->
+          <g id="eye-left" transform="translate(40,45)">
+            <circle cx="0" cy="0" r="4" fill="#fff" stroke="#333" stroke-width="1"/>
+            <circle id="left-pupil" cx="0" cy="0" r="1.5" fill="#333" />
+          </g>
+          <!-- Ochiul drept -->
+          <g id="eye-right" transform="translate(60,45)">
+            <circle cx="0" cy="0" r="4" fill="#fff" stroke="#333" stroke-width="1"/>
+            <circle id="right-pupil" cx="0" cy="0" r="1.5" fill="#333" />
+          </g>
+          <!-- Nas -->
+          <polygon points="50,55 47,63 53,63" fill="#ff69b4"/>
+          <!-- Gura -->
+          <path d="M45,67 Q50,72 55,67" stroke="#333" stroke-width="1" fill="none"/>
+        </svg>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#introduction" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <button id="lang-toggle" class="toggle-btn">EN</button>
+        <button id="mode-toggle" class="toggle-btn mode-btn">
+          <span class="mode-icon" id="mode-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Secțiunea de Introducere -->
+  <section id="introduction">
+    <div class="intro-container">
+      <h1>
+        <span class="greeting">[hello <span class="dynamic-text"></span>]</span> I'm <span class="name">Manole Elisei</span>
+      </h1>
+      <p class="intro-desc" 
+         data-en="I am a full stack developer passionate about technology, with expertise in both front-end and back-end. I enjoy challenges that drive me to innovate and continuously evolve." 
+         data-ro="Sunt un dezvoltator full stack pasionat de tehnologie, cu expertiza atât în front-end cât și în back-end. Îmi plac provocările care mă determină să inovez și să evoluez continuu.">
+      </p>
+      <button class="cta-btn" id="talk-btn">Let's talk</button>
+    </div>
+  </section>
+  
+  <!-- Secțiunea About Me -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <h2 class="lang-text" data-en="About Me" data-ro="Despre mine">About Me</h2>
+        <p class="lang-text" 
+           data-en="Hi! My name is Elisei M., and I am a full stack developer. I love creating web applications from scratch and bringing them to life in the browser. Working with both front-end and back-end has given me a complete perspective on the development process." 
+           data-ro="Salut! Numele meu este Elisei M., și sunt un dezvoltator full stack. Îmi place să creez aplicații web de la zero și să le aduc la viață în browser. Lucrul atât cu front-end cât și cu back-end mi-a oferit o perspectivă completă asupra procesului de dezvoltare.">
+          Hi! My name is Elisei M., and I am a full stack developer...
+        </p>
+        <p class="lang-text" 
+           data-en="Currently, I focus on projects that blend creative design with robust functionality. I enjoy experimenting with new technologies and finding ingenious solutions to everyday challenges." 
+           data-ro="În prezent, mă concentrez pe proiecte care îmbină designul creativ cu funcționalitatea robustă. Îmi place să experimentez cu tehnologii noi și să găsesc soluții ingenioase pentru provocările cotidiene.">
+          Currently, I focus on projects that blend creative design with robust functionality...
+        </p>
+        <p class="lang-text" 
+           data-en="I also have a passion for continuous learning and for sharing knowledge with other technology enthusiasts." 
+           data-ro="De asemenea, am o pasiune pentru învățarea continuă și pentru împărtășirea cunoștințelor cu alți entuziaști ai tehnologiei.">
+          I also have a passion for continuous learning...
+        </p>
+        <a class="cta-btn resume-btn" href="cv.pdf" download>Resume</a>
+      </div>
+      <div class="about-image">
+        <img src="images/about.jpg" alt="About Me">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Secțiunea Skills (Tech Stack) -->
+  <section class="tech-stack-section" id="skills">
+    <h2 class="tech-stack-title lang-text" data-en="</Skills>" data-ro="</Abilități>">&lt;/Skills&gt;</h2>
+    <h3 class="tech-stack-subtitle lang-text" data-en="Tech Stack" data-ro="Stack-ul Tehnologic">Tech Stack</h3>
+    <div class="tech-stack-grid">
+      <!-- Exemplu de 18 iteme -->
+      <div class="tech-item" title="HTML">
+        <i class="devicon-html5-plain-wordmark colored"></i>
+      </div>
+      <div class="tech-item" title="CSS">
+        <i class="devicon-css3-plain-wordmark colored"></i>
+      </div>
+      <div class="tech-item" title="JavaScript">
+        <i class="devicon-javascript-plain colored"></i>
+      </div>
+      <div class="tech-item" title="Bootstrap">
+        <i class="devicon-bootstrap-plain-wordmark colored"></i>
+      </div>
+      <div class="tech-item" title="GitHub">
+        <i class="devicon-github-original-wordmark"></i>
+      </div>
+      <div class="tech-item" title="Git">
+        <i class="devicon-git-plain-wordmark colored"></i>
+      </div>
+      <div class="tech-item" title="C">
+        <i class="devicon-c-plain colored"></i>
+      </div>
+      <div class="tech-item" title="C++">
+        <i class="devicon-cplusplus-plain colored"></i>
+      </div>
+      <div class="tech-item" title="PHP">
+        <i class="devicon-php-plain colored"></i>
+      </div>
+      <div class="tech-item" title="MySQL">
+        <i class="devicon-mysql-original colored"></i>
+      </div>
+      <div class="tech-item" title="Photoshop">
+        <i class="devicon-photoshop-plain"></i>
+      </div>
+      <div class="tech-item" title="Figma">
+        <i class="devicon-figma-plain colored"></i>
+      </div>
+      <div class="tech-item" title="Cisco">
+        <i class="devicon-cisco-plain colored"></i>
+      </div>
+      <div class="tech-item" title="Magento">
+        <i class="devicon-magento-original colored"></i>
+      </div>
+      <div class="tech-item" title="Shopify">
+        <i class="devicon-shopify-plain colored"></i>
+      </div>
+      <div class="tech-item" title="WordPress">
+        <i class="devicon-wordpress-plain"></i>
+      </div>
+      <div class="tech-item" title="Pluriva">
+        <span class="pluriva-text">P</span>
+      </div>
+      <div class="tech-item" title="Microsoft Office">
+        <i class="devicon-windows8-original colored"></i>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Secțiunea Projects (6 proiecte, layout orizontal, fade-in, lightbox) -->
+  <section id="projects" class="projects-section">
+    <h2 class="section-title lang-text" data-en="Projects" data-ro="Proiecte">Projects</h2>
+    
+    <!-- Proiect 1 -->
+    <div class="project">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project One" data-ro="Proiectul Unu">Project One</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project one." 
+           data-ro="Scurtă descriere în Română pentru proiectul unu.">
+          Short description in English for project one.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 1" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 2 (reverse layout) -->
+    <div class="project reverse">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Two" data-ro="Proiectul Doi">Project Two</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project two." 
+           data-ro="Scurtă descriere în Română pentru proiectul doi.">
+          Short description in English for project two.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 2" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 3 -->
+    <div class="project">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Three" data-ro="Proiectul Trei">Project Three</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project three." 
+           data-ro="Scurtă descriere în Română pentru proiectul trei.">
+          Short description in English for project three.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 3" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 4 (reverse) -->
+    <div class="project reverse">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Four" data-ro="Proiectul Patru">Project Four</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project four." 
+           data-ro="Scurtă descriere în Română pentru proiectul patru.">
+          Short description in English for project four.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 4" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 5 -->
+    <div class="project">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Five" data-ro="Proiectul Cinci">Project Five</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project five." 
+           data-ro="Scurtă descriere în Română pentru proiectul cinci.">
+          Short description in English for project five.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 5" class="project-img">
+      </div>
+    </div>
+    
+    <!-- Proiect 6 (reverse) -->
+    <div class="project reverse">
+      <div class="project-info">
+        <h3 class="project-title lang-text" data-en="Project Six" data-ro="Proiectul Șase">Project Six</h3>
+        <p class="project-desc lang-text"
+           data-en="Short description in English for project six." 
+           data-ro="Scurtă descriere în Română pentru proiectul șase.">
+          Short description in English for project six.
+        </p>
+        <div class="project-buttons">
+          <a href="#" class="project-btn">
+            <i class="fab fa-github"></i>
+            <span class="lang-text" data-en="Code View" data-ro="Vezi Codul">Code View</span>
+          </a>
+          <a href="#" class="project-btn">
+            <span class="lang-text" data-en="Live View" data-ro="Vizualizare Live">Live View</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://i.imgur.com/PVLXPyC.jpeg" alt="Project 6" class="project-img">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Lightbox pentru imaginile mărite -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img id="lightboxImg" src="" alt="Lightbox">
+  </div>
 
-/* Setările de bază */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background: var(--bg-gradient-dark);
-  color: var(--text-light);
-  transition: background var(--transition-speed), color var(--transition-speed);
-}
-body.dark-mode {
-  background: var(--bg-gradient-dark);
-  color: var(--text-light);
-}
-body.light-mode {
-  background: var(--bg-gradient-light);
-  color: var(--text-dark);
-}
-
-/* Custom Cursor */
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  transition: transform 0.1s ease-out;
-}
-
-/* Navbar cu fundal blurat */
-.navbar {
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
-  transition: background var(--transition-speed);
-}
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Logo cu iepuraș */
-.logo {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
-}
-#bunny-svg {
-  width: 100%;
-  height: 100%;
-}
-#eye-left, #eye-right {
-  transition: transform 0.2s ease-out;
-  stroke: #333;
-  stroke-width: 1;
-}
-
-/* Restul Navbar-ului */
-.nav-menu {
-  list-style: none;
-  display: flex;
-  margin: 0;
-}
-.nav-item {
-  margin: 0 15px;
-}
-.nav-link {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 500;
-  transition: color var(--transition-speed);
-}
-.nav-link:hover {
-  color: var(--accent);
-}
-.nav-buttons {
-  display: flex;
-  align-items: center;
-}
-.toggle-btn {
-  background: linear-gradient(45deg, #1E90FF, #FF4500);
-  border: none;
-  color: #fff;
-  padding: 8px 16px;
-  margin-left: 10px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-}
-.toggle-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(30,144,255,0.7);
-}
-.light-mode .toggle-btn {
-  background: linear-gradient(45deg, #87CEFA, #FFA07A);
-}
-.mode-btn {
-  padding: 8px;
-  border-radius: 50%;
-  font-size: 0.9rem;
-}
-.mode-icon {
-  display: inline-block;
-  transition: opacity 0.4s ease;
-}
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-.bar {
-  height: 3px;
-  width: 25px;
-  background-color: currentColor;
-  margin: 4px 0;
-  transition: 0.4s;
-}
-
-/* Secțiunile (Introducere, About, Skills, Projects, Footer) */
-section {
-  background: none;
-  position: relative;
-  padding-bottom: 60px;
-}
-
-/* Secțiunea de Introducere */
-#introduction {
-  padding: 120px 20px 80px;
-  text-align: left;
-}
-.intro-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-#introduction h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-.greeting {
-  font-weight: bold;
-  margin-right: 10px;
-}
-.dynamic-text {
-  font-weight: bold;
-  color: var(--accent);
-  animation: blink 1s infinite;
-}
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-.name {
-  font-weight: normal;
-}
-.intro-desc {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-.cta-btn {
-  background: linear-gradient(45deg, #FF4500, #1E90FF);
-  border: none;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-  text-decoration: none;
-  display: inline-block;
-}
-.cta-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(30,144,255,0.7);
-}
-
-/* Secțiunea About Me */
-#about {
-  padding: 80px 20px;
-}
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-.about-text {
-  flex: 1;
-  text-align: left;
-}
-.about-text h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-.resume-btn {
-  margin-top: 20px;
-}
-.about-image {
-  flex: 1;
-  text-align: right;
-}
-.about-image img {
-  max-width: 350px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-}
-.about-image img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-/* Secțiunea Skills (Tech Stack) */
-.tech-stack-section {
-  padding: var(--section-padding);
-  color: #ecf0f1;
-  text-align: center;
-  transition: background var(--transition-speed);
-}
-.tech-stack-title {
-  font-family: 'Lato', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--accent);
-  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-.tech-stack-subtitle {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 30px;
-  color: #fff;
-}
-
-/* 4 coloane fixe (120px), spațiu mic între coloane, item mai mare, icon mai mare */
-.tech-stack-grid {
-  display: grid;
-  /* 4 coloane a câte 120px fiecare */
-  grid-template-columns: repeat(5, 200px);
-  /* spațiu vertical (row-gap) și orizontal (column-gap) */
-  row-gap: 15px;
-  column-gap: 10px;
-  justify-content: center; /* centrează tot grid-ul în container */
-  align-items: center;
-}
-.tech-item {
-  background-color: #1c1c1c;
-  border-radius: 12px;
-  /* Având 120px pe coloană, item-ul poate avea tot 120px */
-  width: 120px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-  position: relative;
-}
-.tech-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-/* Icon mai mare */
-.tech-item i {
-  font-size: 3rem;
-}
-.pluriva-text {
-  font-size: 3rem;
-  color: #fff;
-  font-weight: bold;
-}
-
-/* Media queries adaptate */
-@media (max-width: 992px) {
-  .tech-stack-grid {
-    /* 2 coloane a câte 120px */
-    grid-template-columns: repeat(2, 120px);
-  }
-}
-@media (max-width: 576px) {
-  .tech-stack-grid {
-    /* Poți pune tot 2 coloane sau 1, cum dorești */
-    grid-template-columns: repeat(2, 120px);
-  }
-}
-
-/* Secțiunea Projects (Carusel) */
-.projects-section {
-  padding: 80px 20px;
-  text-align: center;
-  transition: background var(--transition-speed);
-}
-.projects-section .section-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-.carousel-item {
-  min-width: 100%;
-  box-sizing: border-box;
-  padding: 20px;
-}
-.carousel-item img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-.carousel-item h3 {
-  margin-top: 10px;
-  font-size: 1.5rem;
-}
-/* Butoane pentru carusel */
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-}
-.carousel-button.prev {
-  left: 10px;
-}
-.carousel-button.next {
-  right: 10px;
-}
-
-/* Secțiunea Footer */
-footer {
-  background: #0f0f0f;
-  padding: 40px 20px;
-  text-align: center;
-  transition: background var(--transition-speed);
-  color: #ecf0f1;
-  margin-top: 40px;
-}
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.footer-message {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--accent);
-  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-.footer-getintouch {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: inherit;
-}
-.footer-icons a {
-  text-decoration: none;
-  border: none;
-  color: inherit;
-  margin: 0 10px;
-  font-size: 2rem;
-  transition: transform var(--transition-speed), color var(--transition-speed);
-}
-.footer-icons a:hover {
-  transform: translateY(-5px);
-  color: var(--accent);
-}
-.footer-created {
-  font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
-}
-.footer-created a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color var(--transition-speed);
-}
-.footer-created a:hover {
-  color: #fff;
-}
-
-/* Tranziții subtile între secțiuni */
-section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(0,0,0,0.1);
-  pointer-events: none;
-}
-
-/* Responsivitate */
-@media screen and (max-width: 768px) {
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-  .nav-menu.active {
-    display: flex;
-    background-color: var(--primary-bg);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 10px 0;
-  }
-  .nav-item {
-    text-align: center;
-    margin: 10px 0;
-  }
-  .hamburger {
-    display: flex;
-  }
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .about-image {
-    text-align: center;
-    margin-top: 20px;
-  }
-  .projects-section .section-title {
-    text-align: center;
-  }
-}
+  <!-- Secțiunea Footer -->
+  <footer>
+    <div class="footer-container">
+      <p class="footer-message">Learning, Living, and Leveling up</p>
+      <p class="footer-getintouch">GetingTouch( );</p>
+      <div class="footer-icons">
+        <a href="https://www.instagram.com/yourprofile" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+          <i class="devicon-linkedin-plain colored"></i>
+        </a>
+        <a href="https://github.com/Elisei-M" target="_blank" title="GitHub">
+          <i class="devicon-github-original colored"></i>
+        </a>
+        <a href="mailto:yourmail@example.com" target="_blank" title="Mail">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <p class="footer-created">
+        Created by <a href="https://github.com/Elisei-M" target="_blank">Elisei M.</a> | <a href="https://github.com/Elisei-M/portofolio.git" target="_blank">GitHub Profile</a>
+      </p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
