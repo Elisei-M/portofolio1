@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Elementele Navbar
+  // === Navbar Elements ===
   const modeToggle = document.getElementById("mode-toggle");
   const modeIcon = document.getElementById("mode-icon");
   const langToggle = document.getElementById("lang-toggle");
@@ -7,37 +7,32 @@ document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
-  // Elementele de text pentru traducere
+  // === Elements for Translation ===
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
   const langTextElements = document.querySelectorAll(".lang-text");
 
-  // Elementele caruselului proiectelor
-  const carouselTrack = document.querySelector(".carousel-track");
-  const prevButton = document.querySelector(".carousel-button.prev");
-  const nextButton = document.querySelector(".carousel-button.next");
-  const carouselItems = document.querySelectorAll(".carousel-item");
-  let currentIndex = 0;
-
-  // Limba curentă
+  // === Current Language ===
   let currentLanguage = "EN";
 
-  // Stocăm coordonatele inițiale pentru ochii iepurașului
+  // === Bunny Eyes Coordinates ===
   const leftEyeInitial = { x: 40, y: 45 };
   const rightEyeInitial = { x: 60, y: 45 };
 
-  // Funcția pentru schimbarea modului dark/light
+  // === Dark/Light Mode Icon Update ===
   function updateModeIcon(isDark) {
     modeIcon.style.opacity = 0;
     setTimeout(() => {
       if (isDark) {
-        modeIcon.innerHTML = 
+        // Icon lună
+        modeIcon.innerHTML = `
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path>
           </svg>
-        ;
+        `;
       } else {
-        modeIcon.innerHTML = 
+        // Icon soare
+        modeIcon.innerHTML = `
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -49,12 +44,13 @@ document.addEventListener("DOMContentLoaded", function() {
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-        ;
+        `;
       }
       modeIcon.style.opacity = 1;
     }, 200);
   }
 
+  // === Toggle Dark/Light Mode ===
   modeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     document.body.classList.toggle("light-mode");
@@ -62,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
     updateModeIcon(isDark);
   });
 
-  // Funcția pentru actualizarea limbii
+  // === Update Language ===
   function updateLanguage() {
     navLinks.forEach(link => {
       switch(link.getAttribute("href")) {
@@ -91,13 +87,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  // === Toggle Language ===
   langToggle.addEventListener("click", () => {
     currentLanguage = currentLanguage === "EN" ? "RO" : "EN";
     langToggle.textContent = currentLanguage;
     updateLanguage();
   });
 
-  // Text dinamic în Introducere
+  // === Dynamic Text in Introduction ===
   const dynamicWords = ["Bob", "Users", "Coders"];
   let dynamicIndex = 0;
   function cycleDynamicText() {
@@ -107,37 +104,17 @@ document.addEventListener("DOMContentLoaded", function() {
   cycleDynamicText();
   setInterval(cycleDynamicText, 2000);
 
-  // Caruselul proiectelor
-  function updateCarousel() {
-    const slideWidth = carouselItems[0].getBoundingClientRect().width;
-    carouselTrack.style.transform = translateX(-${currentIndex * slideWidth}px);
-  }
-  nextButton.addEventListener("click", () => {
-    if (currentIndex < carouselItems.length - 1) {
-      currentIndex++;
-    } else {
-      currentIndex = 0;
-    }
-    updateCarousel();
-  });
-  prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-    } else {
-      currentIndex = carouselItems.length - 1;
-    }
-    updateCarousel();
-  });
+  // === Remove old Carousel logic ===
+  // (Deleted references to carouselTrack, prevButton, nextButton, etc.)
 
-  // Custom cursor
+  // === Custom Cursor ===
   const customCursor = document.querySelector('.custom-cursor');
   document.addEventListener('mousemove', (e) => {
-    customCursor.style.left = ${e.clientX}px;
-    customCursor.style.top = ${e.clientY}px;
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
   });
 
-  // Mouse follower pentru iepurașul din navbar:
-  // Se calculează offset-ul față de centrul feței iepurașului
+  // === Mouse Follower for Bunny ===
   const bunnySVG = document.getElementById('bunny-svg');
   const leftEye = document.getElementById('eye-left');
   const rightEye = document.getElementById('eye-right');
@@ -153,20 +130,64 @@ document.addEventListener("DOMContentLoaded", function() {
       const maxPupilOffset = 4;
       const offsetX = Math.cos(angle) * maxPupilOffset;
       const offsetY = Math.sin(angle) * maxPupilOffset;
-      // Poziționăm ochii pornind de la valorile inițiale
-      leftEye.setAttribute('transform', translate(${leftEyeInitial.x + offsetX}, ${leftEyeInitial.y + offsetY}));
-      rightEye.setAttribute('transform', translate(${rightEyeInitial.x + offsetX}, ${rightEyeInitial.y + offsetY}));
+      leftEye.setAttribute('transform', `translate(${leftEyeInitial.x + offsetX}, ${leftEyeInitial.y + offsetY})`);
+      rightEye.setAttribute('transform', `translate(${rightEyeInitial.x + offsetX}, ${rightEyeInitial.y + offsetY})`);
     });
     logo.addEventListener('mouseleave', function() {
-      leftEye.setAttribute('transform', translate(${leftEyeInitial.x}, ${leftEyeInitial.y}));
-      rightEye.setAttribute('transform', translate(${rightEyeInitial.x}, ${rightEyeInitial.y}));
+      leftEye.setAttribute('transform', `translate(${leftEyeInitial.x}, ${leftEyeInitial.y})`);
+      rightEye.setAttribute('transform', `translate(${rightEyeInitial.x}, ${rightEyeInitial.y})`);
     });
   }
 
-  // Hamburger menu pentru mobil
+  // === Hamburger Menu (Mobile) ===
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
 
+  // === IntersectionObserver pentru fade-in la Projects ===
+  // (Fiecare .project are opacity:0 & transform: translateY(20px) în CSS,
+  //  iar la intersectare devine .in-view)
+  const projects = document.querySelectorAll('.project');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  projects.forEach(proj => {
+    observer.observe(proj);
+  });
+
+  // === Lightbox la click pe imagine ===
+  const projectImages = document.querySelectorAll('.project-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  projectImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  // Închiderea lightbox la buton (X)
+  lightboxClose.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  });
+
+  // Închiderea lightbox la click pe fundal
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    }
+  });
+
+  // === Initialize Language on Load ===
   updateLanguage();
 });
