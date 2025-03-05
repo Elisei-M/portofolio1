@@ -101,6 +101,34 @@ body.light-mode {
   display: flex;
   align-items: center;
 }
+
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+
+
+
 .toggle-btn {
   background: linear-gradient(45deg, #1E90FF, #FF4500);
   border: none;
@@ -201,6 +229,7 @@ section {
 
 /* Secțiunea About Me */
 #about {
+  min-height: 80vh;
   padding: 80px 20px;
 }
 .about-container {
@@ -398,11 +427,14 @@ section {
   justify-content: center;
 }
 .project-image img {
-  max-width: 100%;
+  width: 600px;   /* lățimea dorită */
+  height: 350px;  /* înălțimea dorită */
+  object-fit: contain; /* redimensionează imaginea astfel încât să se încadreze complet în container */
   border-radius: 10px;
   cursor: pointer;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
+
 .project-image img:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);

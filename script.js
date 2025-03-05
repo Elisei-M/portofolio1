@@ -6,18 +6,53 @@ document.addEventListener("DOMContentLoaded", function() {
   const navLinks = document.querySelectorAll(".nav-link");
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
+  const sections = document.querySelectorAll("#introduction, #about, #skills, #projects");
+
 
   // === Elements for Translation ===
   const introDesc = document.querySelector(".intro-desc");
   const dynamicTextEl = document.querySelector(".dynamic-text");
   const langTextElements = document.querySelectorAll(".lang-text");
-
+  
   // === Current Language ===
   let currentLanguage = "EN";
 
   // === Bunny Eyes Coordinates ===
   const leftEyeInitial = { x: 40, y: 45 };
   const rightEyeInitial = { x: 60, y: 45 };
+
+
+
+  const scrollSpyObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 1. Eliminăm clasa .active de la toate linkurile
+          navLinks.forEach(link => link.classList.remove("active"));
+  
+          // 2. Preluăm id-ul secțiunii vizibile
+          const currentId = entry.target.getAttribute("id");
+  
+          // 3. Căutăm link-ul care are href="#{currentId}"
+          const currentLink = document.querySelector(`.nav-link[href="#${currentId}"]`);
+          if (currentLink) {
+            currentLink.classList.add("active");
+          }
+        }
+      });
+    },
+    {
+      // threshold: 
+      threshold: 0.1,
+      rootMargin: "0px 0px -40% 0px"
+    }
+  );
+  
+  // Observăm fiecare secțiune
+  sections.forEach(section => {
+    scrollSpyObserver.observe(section);
+  });
+
 
   // === Dark/Light Mode Icon Update ===
   function updateModeIcon(isDark) {
@@ -95,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // === Dynamic Text in Introduction ===
-  const dynamicWords = ["Bob", "Users", "Coders"];
+  const dynamicWords = ["world", "users", "coders"];
   let dynamicIndex = 0;
   function cycleDynamicText() {
     dynamicTextEl.textContent = dynamicWords[dynamicIndex];
@@ -104,8 +139,6 @@ document.addEventListener("DOMContentLoaded", function() {
   cycleDynamicText();
   setInterval(cycleDynamicText, 2000);
 
-  // === Remove old Carousel logic ===
-  // (Deleted references to carouselTrack, prevButton, nextButton, etc.)
 
   // === Custom Cursor ===
   const customCursor = document.querySelector('.custom-cursor');
@@ -144,8 +177,6 @@ document.addEventListener("DOMContentLoaded", function() {
     navMenu.classList.toggle("active");
   });
 
-  // === IntersectionObserver pentru fade-in la Projects ===
-  // (Fiecare .project are opacity:0 & transform: translateY(20px) în CSS,
   //  iar la intersectare devine .in-view)
   const projects = document.querySelectorAll('.project');
   const observer = new IntersectionObserver((entries, obs) => {
